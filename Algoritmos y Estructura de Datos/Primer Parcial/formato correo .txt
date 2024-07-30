@@ -1,0 +1,6 @@
+Correo: tonahtiu@yahoo.com
+Asunto: 2CV3 Torres Abonce Luis Miguel Tarea1
+Nombre del archivo: Torres_Abonce.c
+en al primera linea siempre va nombre si en c (en comentario)
+
+

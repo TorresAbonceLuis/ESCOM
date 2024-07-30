@@ -1,2 +1,2 @@
 # ESCOM
-Toda los trabajos de mic arrera
+Toda los trabajos de mi carrera

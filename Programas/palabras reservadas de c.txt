@@ -1,0 +1,40 @@
+Palabras reservadas del lenguaje c
+Carcateristicas
+Son reservadas por el lenguaje
+Escritas en minusculas
+Estas palabras reservadas estan en ingles
+No se pude utilizar como el nombre de una variable de algun tipo de dato(enteros, 
+flotantes y caracter)
+No se utiliza como el nombre de una funcion 
+
+auto: Se utilza el microprocesador para su calculo.
+break: Detener un ciclo d ejecucion.
+char: Define un tipo de dato a carcter (8bits=1byte) 256 posibles representaciones 0 a 255
+const: Pasar de una variable a constante 
+continue: Evita que las sentencias estan debajo de la palabra ya no se ejecute,trabaj en un ciclo
+default: Trabaj en un segmento de switch 
+do: Es la parte inicial de ciclo do-while
+double:Es un tipo de dato flotante doble(8bytes=64bits) 15 digitos significativos
+else:La contraparte del if 
+enum: Enumeracion 
+extern: Lo declarado esta afuera en otro lado(libreria, otro archivo)
+float: Es un tipod e dato flotante sencillo(4bytes=32bits)7 digitos significativos
+for: Es un ciclo 
+goto: (NO UTILIZAR)genera codigo espagueti
+if: Es para toma de decision 
+int: Declara un tipo de dato entero(4bytes=32bits)
+long: Es un tipo de dato entero doble (8 bytes=64bits)
+register: Utiliza elr egistro del microprocesador
+return: Devuelve el flujo del programa 
+short: Este es un entero corto (2 bytes=16bits)
+signed:acepta valores negativos y positivos (modificador)
+sizeof: Devuelve el tamanoo en bytes de alguna variable
+static: Hace un constante
+struct: Crea una estructura 
+switch: Creamos una toma de decision multiple 
+typedef: Redefine un tipo
+union: Crea una estructura junta con varios tipos
+unsigned:crea una variable sin signo comenzando en cero 
+void: Declara una funcion vacia, sevuelve un proceso
+volatile: Esta se usa en la memoria del microprocesador
+while:es un ciclo 

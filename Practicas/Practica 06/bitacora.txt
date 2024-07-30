@@ -1,0 +1,8 @@
+[24/01/21 - 12:20]
+A la hora indicada se introdujo a un alumno.
+[24/01/21 - 12:22]
+A la hora indicada se abrio el programa.
+[24/01/21 - 12:22]
+A la hora indicada se introdujo a un alumno.
+[24/01/21 - 12:22]
+A la hora indicada se cerro el programa.

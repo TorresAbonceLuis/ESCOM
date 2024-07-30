@@ -1,0 +1,40 @@
+insert into municipio values
+('Tultitlan'),
+('Naucalpan'),
+('Tlalnepantla'),
+('Ecatepec'),
+('Nezahualcoyotl');
+
+insert into vivienda values 
+('Santa rosa 13','Tultitlan'),
+('San Pablo 202','Naucalpan'),
+('Lago garda 131','Tlalnepantla'),
+('Av. de lo maestros 214','Ecatepec'),
+('San nicolas 58','Nezahualcoyotl');
+
+insert into habitante values 
+('OIJ023HMRCRMA7','OOJ23012002','Orlando','Ortiz',null,'Masculino','Padre','Tultitlan','Santa rosa 13'),
+('TOAL011106HDFR','T04HY34H012','Luis','Torres','Abonce','Masculino','Padre','Naucalpan','San Pablo 202'),
+('SAEB1245466HGB','S13FGBC143G','Sebastian','Garcia','Diaz','Masculino','Padre','Nezahualcoyotl','San nicolas 58'),
+('JSOFUEB2558GNN','JSJVBDUIV14','Jorge','Jiminez',null,'Masculino','Padre','Tlalnepantla','Lago garda 131'),
+('M97F9GUNE97CB8','JFBD789BD8B','Gabriela','Miroslava',null,'Femenino','Madre','Ecatepec','Av. de lo maestros 214'),
+('FJEB149VNFO2B5','1JF1H4B5J2B','Federico','Ortiz',null,'Masculino','Hijo','Tultitlan','Santa rosa 13'),
+('SFNEWODN328571','14M1UJ154I1','Angel','Torres',null,'Masculino','Hijo','Naucalpan','San Pablo 202'),
+('GLWIOSDN8128GH','DKG78D5YFB8','Dana','Garcia',null,'Masculino','Hija','Nezahualcoyotl','San nicolas 58'),
+('DSJGUQWNAAL145','14IK54N12ID','Diego','Jimenez',null,'Masculino','Hijo','Tlalnepantla','Lago garda 131'),
+('AFN18957FB19FH','AFGJK29VN24','Uriel','Miroslava',null,'Masculino','Hijo','Ecatepec','Av. de lo maestros 214');
+
+
+insert into duenio values
+('OIJ023HMRCRMA7','5567842643'),
+('TOAL011106HDFR','5567453718'),
+('SAEB1245466HGB','5512446141'),
+('JSOFUEB2558GNN','5512479189'),
+('M97F9GUNE97CB8','5591471957');
+
+insert into dependiente values
+('FJEB149VNFO2B5','Hijo','OIJ023HMRCRMA7'),
+('SFNEWODN328571','Hijo','TOAL011106HDFR'),
+('GLWIOSDN8128GH','Hija','SAEB1245466HGB'),
+('DSJGUQWNAAL145','Hijo','JSOFUEB2558GNN'),
+('AFN18957FB19FH','Hijo','M97F9GUNE97CB8');

@@ -1,0 +1,49 @@
+create table municipio(
+	nombreMu char(30) not null,
+	constraint cvemunicipio
+		primary key (nombreMu)
+);
+create table vivienda(
+	direccion char(40),
+	nombreMu char(30),
+	constraint cvevivienda
+		primary key (direccion),
+	constraint cvenombreMu
+		foreign key (nombreMu) references municipio(nombreMu)
+);
+create table habitante(
+	curp char(25),
+	rfc char(30),
+	nombre char(20) not null,
+	apa char(15) not null,
+	ama char(15),
+	genero char(15),
+	rol char(15),
+	nombreMu char(30),
+	direccion char(40),
+	constraint cvehabitante
+		primary key(curp),
+	constraint cvenombreMu
+		foreign key (nombreMu) references municipio(nombreMu),
+	constraint cvedireccion
+		foreign key (direccion) references vivienda(direccion)
+);
+
+create table duenio(
+	curp char(25) not null,
+	telefono char(10) not null,
+	constraint cvedueño
+		primary key (curp),
+	constraint cvrcurp
+		foreign key (curp) references habitante (curp)
+);
+
+create table dependiente(
+	curp char(25) not null,
+	parentesco char(20),
+	curpDue char(25) not null,
+	constraint cvedepend
+		primary key (curp,curpDue),
+	constraint cvecurpDue
+		foreign key (curpDue) references duenio (curp)
+);

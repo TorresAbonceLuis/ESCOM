@@ -1,0 +1,133 @@
+create table empleado(
+	nss int not null,
+	nombreP char(15),
+	apPat char(15),
+	apMat char(15),
+	fNac date,
+	direccion char(15),
+	salario int,
+	sexo char(15),
+	constraint cveEmpleado
+		primary key (nss)
+);
+--Se crea la tabla con una consulta para bono que lleva los datos hacer otra tabla con la suma de todos los empleado
+--numVentas, bono del 10% de las ventas
+--select numVentas,sum() 
+
+create table cliente(
+	codigoC char(15) not null,
+	nombreP char(15),
+	apPat char(15),
+	apMat char(15),
+	edad int,
+	constraint cvecodigoC
+		primary key (codigoC)
+);
+create table tarjeta(
+	fechaCad date not null,
+	codigoC char(15) not null,
+	constraint cveTarjeta
+		primary key (fechaCad, codigoC),
+	constraint cveCodigoClient
+		foreign key (codigoC) references cliente (codigoC)
+);
+create table producto(
+	codigoP int not null,
+	pasillo char(15),
+	descuento char(15),
+	precio int,
+	tipo_p char(15),
+	formato char(15),
+	codigoC char(15),
+	nssEmp int,
+	comprasMes int,
+	constraint cveProducto
+		primary key (codigoP),
+	constraint cvecodigoClient
+		foreign key (codigoC) references cliente (codigoC),
+	constraint cvenssEmp
+		foreign key (nssEmp) references empleado (nss)
+);
+create table ventas(
+	numVentas int not null,
+	nssEmp int not null,
+	codigoP char(15),
+	precioP int,
+	codigoC char(15),
+	constraint cveVentas
+		primary key (numVentas,nssEmp),
+	constraint cveNss
+		foreign key (nssEmp) references empleado (nss)
+	constraint cveCodC
+		foreign key (codigoC) references cliente (codigoC)
+	constraint cveCodP
+		foreign key (codigoP) references producto (codigoP)
+	constraint cveNss
+		foreign key (precioP) references producto (precio)
+);
+--crear con una consulta. y cuando se modifique (ventas) eliminar y crear(de nuevo) con nueva consulta.************
+create table empleadoVentas(nssEmpleado,numVentas,monto) as( 
+select nssEmp, count(nssEmp),sum(precioP)
+	from ventas
+	grop by nssEmp
+);
+create table musica(
+	codigoMus int not null,
+	nomMus char(15),
+	artista char(15),
+	anioPublic char(15),
+	formato char(15),
+	constraint cvemusica
+		primary key (codigoMus),
+	constraint cveCodigoMus
+		foreign key (codigoMus) references producto (codigoP)
+);
+create table video(
+	codigoVid int not null,
+	nombreVid char(15),
+	director char(15),
+	anio char(15),
+	formato char(15),
+	constraint cveVideo
+		primary key(codigoVid),
+	constraint cveCodigoVid
+		foreign key (codigoVid) references producto (codigoP)
+);
+create table actores(
+	codigoPeli int not null,
+	nombreActor char(15),
+	constraint cveActores
+		primary key (codigoPeli, nombreActor),
+	constraint cveCodigoPeliP
+		foreign key (codigoPeli) references video (codigoVid)
+);
+create table libro(
+	codigoLib int not null,
+	nombreLib char(15),
+	autor char(15),
+	anio char(15),
+	edicion char(15),
+	formato char(15),
+	constraint cveLibro
+		primary key (codigoLib),
+	constraint cveCodigoLib
+		foreign key (codigoLib) references producto(codigoP)
+);
+create table videojuego(
+	codigoJuego int not null,
+	nombreJuego char(15),
+	desarrolladoPor char(15),
+	anio char(15),
+	plataforma char(15),
+	constraint cveVideojuego
+		primary key (codigoJuego),
+	constraint cveCodigoJue
+		foreign key (codigoJuego) references producto (codigoP)
+);
+NOTAS:
+--AÑADIR AL EMPLEADO DEL MES(DE ALGUNA FORMA)
+--AGREGAR (CREO) UN DISPARADOR QUE CUANDO SE ACTUALIZA LAS VENTAS DE UN EMPLEADO 
+RECALCULE EL EMPLEADO DEL MES
+--VERIFICAR EL PUNTO DE LA NARRATIVA:
+	6.Todas las ventas deben ser registradas, así que es necesario conocer el número de venta, los productos vendidos y sus precios 			individuales, el monto total de la venta, al responsable de la venta y el número del cliente (en caso de que se encuentre registrado).
+--Implentar el 10% del bono 

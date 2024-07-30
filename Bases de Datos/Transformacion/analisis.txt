@@ -1,0 +1,107 @@
+Etidad fuerte
+Persona
+	nombre
+		nomPila,apPat,apMAt
+rfc(llave primaria)
+Relacion
+	-Persona finacia a Persona()
+
+subentidad
+Mecanico
+	rfc(llave foranea) referencia persona(rfc)
+	f_cont
+		dia,mes,año
+Entidad dependiente
+Revision
+	no_serv(llave parcial)
+	diagnos
+Relacion
+	-Mecanico hace revision
+		fecha,hora
+
+Entidad
+Cliente 
+	rfc(llave foranea) referencia persona(rfc)
+	telefono(multivaluado)
+	dir
+
+entidad fuerte
+Automovil
+	placa(llave primaria,compuesta)
+		numero,codEdo
+	color,marca,modelo
+Relacion
+	-Cliente compa automovil
+
+Relacion
+Revision inclye automovil
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

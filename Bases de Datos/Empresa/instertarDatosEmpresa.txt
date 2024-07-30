@@ -1,0 +1,42 @@
+insert into empleado values ('Torres','Abonce','Luis',1212,'Lago Garda',2000,'Masculino','2001-11-06',1212,null);
+insert into departamento values
+(1,'Sistemas',1212,'2021-02-15'),
+(2,'Papeleria',1212,'2021-02-15');
+insert into empleado values ('Ortiz',null,'Orlando',1111,'Wilfrido Massieu',3000,'Masculino','2002-10-08',1212,2);
+insert into departamento values (3,'Recursos H',1111,'2020-10-12');
+insert into empleado values ('Garcia',null,'Sebastian',2222,'Mar rojo',5000,'Masculino','2002-01-20',1111,3);
+insert into departamento values (4,'Investigacion',2222,'2020-10-12');
+insert into empleado values ('Jimenez',null,'Jorge',3333,'Av de los maestros',3500,'Masculino','2001-05-20',2222,2);
+insert into departamento values (5,'Contabilidad',3333,'2020-10-12');
+insert into empleado values 
+('Silva',null,'Jose',4444,'Naucalpan',4000,'Masculino','2001-08-25',3333,4),
+('Ximena',null,'Zarate',5555,'Satelite',5000,'Femenino','1999-11-09',1111,5);
+
+insert into lugar values
+(1,'Lindavista'),
+(2,'Centro'),
+(3,'Polanco'),
+(4,'Poniente'),
+(5,'Sur');
+
+insert into proyecto values 
+(555,'App','Lindavista',1),
+(666,'Base Datos','Centro',2),
+(777,'Pagina web','Polanco',2),
+(888,'Robot','Sur',4);
+
+
+insert into dependiente values
+('Ortiz',null,'Paola','Femenino','Hija','2007-10-05',1111),
+('Torres',null,'Juan','Masculino','Hijo','2005-05-05',1212),
+('Garcia',null,'Pedro','Masculino','Hijo','2013-01-20',2222),
+('Jimenez',null,'Ramiro','Masculino','Hijo','2020-10-15',3333),
+('Mendoza',null,'Uriel','Masculino','Hijo','2006-11-01',4444);
+
+
+insert into trabaja_en values
+(1111,555,14),
+(1212,666,13),
+(2222,555,20),
+(3333,777,15),
+(4444,888,13);

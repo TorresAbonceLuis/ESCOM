@@ -1,0 +1,133 @@
+1. Obtener la fecha de nacimiento y la direccion del empleado cuyo nombre es 'Jose' 'Silva'
+select fechanac,direccion
+from empleado
+where apa='Silva'and nombre='Jose'
+
+***. que se obtiene de 
+	select nss from empleado
+--Todos los numeros de seguridad social de los empledos
+	select nss,numd from empleado, departamento
+--Todos los numeros de seguridad social con todos los numeros de departamentos
+	select * from empleado,departamento
+--Todos las tuplas de empleado con cada una de las tuplas de departamento
+
+2. Obtener el nombre y la direccion de todos los empleados que pertenecen al departamento de 'Investigacion'
+select nombre,appa,direccion 
+from departamento,empleado
+where numd=numdads and nomd='Investigacion'
+
+3. Obtener toda la informacion de los empleados que trabajan en el departamento 5
+select * 
+from empleado
+where numdads=5
+
+4. Para cada proyecto ubicado en 'Lindavista', listar el numero de proyecto, el numero de departamento que lo controla
+   y el apellido parterno, direccion  y fecha de nacimiento del gerente de ese departamento. Considere ademas que el gerente
+  debe pertenecer al mismo departamento que dirige.
+select nump,numdc,appa,direccion,fechan
+from departamento, empleado,proyecto
+where nss=nssEmp and numdads=numd and lugar='Lindavista' and numdc=numd
+
+5. Obtener para cada empleado su nombre completo asi como el nombre completo de su supervisor.
+select empleado.appa,empleado.nombre,supervisor.appa,supervisor.nombre
+from empleado,empleado as supervisor
+where supervisor.nss=empleado.nsssup
+
+6. Obtener una lista con todos los numeros de proyectos en que participa un empleado de apellido paterno 'Silva', ya sea como trabajador o como gerente del departamento que controla el proyecto.
+select nump
+from proyecto
+where nump in (select nump
+			   from proyecto, departamento, empleado
+			   where numd=numdads and nssemp=nss and appa='Silva') or
+	  nump in (select nump
+			   from trabaja_en, empleado
+			   where nssemp=nss and appa='Silva' )
+7. Obtener el nombre de los empleados cuyo salario es mayor que el de todos los empleados del departamento 5 
+select nombre, appa
+from empleado
+where salario>all(select salarios
+		  from empleado
+    		  where numdads=5) 
+
+8. Obtener los salarios distintos de los empleados
+select distinct(salario)
+from empleado
+
+9. Ejemplo consulta anidada
+select distinct nssemp
+from trabaja_en
+where(nump,hrs) IN (select nump,hrs
+				    from trabaja_en
+				    where nssemp='1212')
+
+10. Otro ejemplo
+select distinct nssemp
+from trabaja_en 
+where nump IN (555,666,777)
+
+11. Ejemplo consulta correlacionada (Empleados que no tienen dependientes)
+select nombre, appa
+from empleado
+where NOT EXISTS (select *
+		  from dependiente
+		  where nss=nssemp)
+
+12. Ejemplo is/is not
+select nombre,appa
+from empleado
+where nsssup is null
+
+13.Ejemplo group by para obtener salario promedio por departamento()
+select numdads,count(*),avg(salario)
+from empleado
+group by numdads
+
+14. Obtener el numero de proyecto, nombre y cuantos trabajadores trabajan en este
+select proyecto.nump,nomp,count(*)
+from proyecto,trabaja_en
+where proyecto.nump=trabaja_en.nump
+group by proyecto.nump,nomp
+
+15. Obtener el total de hombres y mujeres por departamento
+Select numdads,sexo, count (*)
+From empleado
+Group by sexo,numdads
+
+16.Obtener el los proyectos donde trabajan mas de 2 empleados
+Select proyecto.nump,nomp,count (*)
+From proyecto,trabaja_en
+Where proyecto.nump=trabaja_en.nump
+Group by proyecto.nump,nomp
+having count(*)>=2
+
+17. Ejemplo de comparacion de subacadenas 
+select nombre,appa
+from empleado
+where direccion like '%indavista%'
+
+18. Otro ejemplo de comparacion de subacadenas*************no se puede ocupar like en tipo de dato date*****************
+select nombre,appa
+from empleado
+where fechan like '199_'
+
+19. Otro ejemplo de comparacion de subcadenas
+select nombre, appa, 1.1*salario
+from empleado
+where not exists(select *
+		 from dependiente
+		 where nss=nssemp)
+
+20. obtener el nombre departamento,nombre y nom proyecto en donde trabaja el empleado
+select nomd,appa,nombre,nomp
+from departamento,empleado,trabaja_en,proyecto
+where numdads=numd and nss=trabaja_en.nssemp and proyecto.nump=trabaja_en.nump
+order by nomd,appa
+//order by nomd DESC, appa ASC
+
+21. Creacion de vistas
+create view Info_depto(nombre_depto,numEmps,saltotal)
+as 
+select nomd,count(*),sum(salario)
+from departamento,empleado
+where numd=numdads
+group by nomd

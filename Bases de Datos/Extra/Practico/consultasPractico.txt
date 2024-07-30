@@ -1,0 +1,265 @@
+1. Obtener la fecha de nacimiento y la direccion del empleado cuyo nombre es 'Jose' 'Silva'
+
+2. Obtener el nombre y la direccion de todos los empleados que pertenecen al departamento de 'Investigacion'
+
+3. Obtener toda la informacion de los empleados que trabajan en el departamento 5
+
+4. Para cada proyecto ubicado en 'Lindavista', listar el numero de proyecto, el numero de departamento que lo controla
+   y el apellido parterno, direccion  y fecha de nacimiento del gerente de ese departamento. Considere ademas que el gerente
+   debe pertenecer al mismo departamento que dirige.
+
+5. Obtener para cada empleado su nombre completo asi como el nombre completo de su supervisor.
+
+6. Obtener una lista con todos los numeros de proyectos en que participa un empleado de apellido paterno 'Silva', 
+   ya sea como trabajador o como gerente del departamento que controla el proyecto.
+
+7. Obtener el nombre de los empleados cuyo salario es mayor que el de todos los empleados del departamento 5 
+
+8. Obtener los salarios distintos de los empleados
+
+14. Obtener el numero de proyecto, nombre y cuantos trabajadores trabajan en este
+
+15. Obtener el total de hombres y mujeres por departamento
+
+16.Obtener el los proyectos donde trabajan mas de 2 empleados
+
+20. obtener el nombre departamento,nombre y nom proyecto en donde trabaja el empleado
+
+
+create table departamento(
+	numD int not null,
+	nomD char(20),
+	nssGer int,
+	FechaDir date,
+	constraint cveDepa
+		primary key(numD)
+);
+
+create table empleado(
+	apPa char(20),
+	apMa char(20),
+	nombre char(20),
+	nss int not null,
+	direccion char(20),
+	salario int,
+	sexo char(20),
+	fechaNac date,
+	numdAds int default null,
+	nssSup int default null,
+	constraint pk_Empleado
+		primary key(nss),
+	constraint fk_Depa
+		foreign key(numdAds)references departamento(numD)
+		on delete set default on update cascade,
+	constraint fk_nssSup
+		foreign key(nssSup)references empleado(nss)
+		on delete set default on update cascade
+);
+
+create table proyecto(
+	numP int not null,
+	nomP char(20),
+	lugar char(20),
+	numDC int,
+	constraint pk_proyecto
+		primary key(numP),
+	constraint fk_numDC
+		foreign key(numDC)references departamento(numD)
+		on delete cascade on update cascade
+);
+
+create table dependiente(
+	apPa char(20),
+	apMa char(20),
+	nombre char(20),
+	sexo char(20),
+	parentesco char(20),
+	fechaN date,
+	nssEmp int,
+	constraint pk_depend
+		primary key(apPa, nombre, nssEmp),
+	constraint fk_nssEmp
+		foreign key(nssEmp)references empleado(nss)
+		on delete cascade on update cascade
+);
+
+create table trabaja_en(
+	nssEmpT int not null,
+	numPT int not null,
+	hrs char(20),
+	constraint pk_trabaja_en
+		primary key(nssEmpT,numPT),
+	constraint fk_nss
+		foreign key(nssEmpT)references empleado(nss)
+		on delete cascade on update cascade,
+	constraint fk_numP
+		foreign key(numPT)references proyecto(numP)
+		on delete cascade on update cascade
+);
+
+create table lugar(
+	numDep int not null,
+	lugar char(20),
+	constraint pk_lugar
+		primary key(numDep),
+	constraint fk_numDep
+		foreign key(numDep)references departamento(numD)
+		on delete cascade on update cascade
+);
+alter table departamento
+add constraint fk_nss
+	foreign key (nssger)references empleado(nss)
+	on delete cascade on update cascade
+
+insert into departamento values
+(1,'Sistemas',null,'2021-02-15'),
+(2,'Papeleria',null,'2021-06-15'),
+(3,'Recursos H',null,'2020-05-12'),
+(4,'Investigacion',null,'2020-10-12'),
+(5,'Contabilidad',null,'2020-11-12');
+
+insert into empleado values
+('Torres','Abonce','Luis',1111,'Santo Thomas',5000,'M','2001-11-06',null,null),
+('Ortiz','Jimenez','Orlando',2222,'Wilfrido Massieu',4000,'M','2002-10-08',null,1111),
+('Garcia',null,'Sebastian',3333,'Mar rojo',5000,'Masculino','2002-01-20',null,null),
+('Jimenez','Juarez','Jorge',4444,'Av de los maestros',6000,'M','2001-05-20',null,3333),
+('Silva','Martinez','Jose',5555,'Naucalpan',4000,'M','2001-08-25',null,null),
+('Ximena',null,'Zarate',6666,'Satelite',5000,'F','1999-11-09',null,5555);
+
+update departamento
+set nssGer=2222 where numD=1
+update departamento
+set nssGer=1111 where numD=2
+update departamento
+set nssGer=3333 where numD=3
+update departamento
+set nssGer=4444 where numD=4
+update departamento
+set nssGer=4444 where numD=5
+
+update empleado
+set numdAds=1 where nss=1111
+update empleado
+set numdAds=2 where nss=2222
+update empleado
+set numdAds=3 where nss=3333
+update empleado
+set numdAds=4 where nss=4444
+update empleado
+set numdAds=5 where nss=5555
+
+insert into proyecto values
+(11,'Aplicacion','Ala A',1),
+(22,'Base Datos','Ala B',2),
+(33,'Pagina web','Ala C',3),
+(44,'Robot','Sur',4);
+
+insert into dependiente values
+('Ortiz',null,'Paola','F','Hija','2007-10-05',1111),
+('Torres','Juarez','Juan','M','Hijo','2005-05-05',2222),
+('Garcia','Garcia','Pedro','M','Hijo','2013-01-20',3333),
+('Jimenez','Mendoza','Ramiro','M','Hijo','2020-10-15',4444),
+('Mendoza',null,'Uriel','M','Hijo','2006-11-01',5555);
+
+insert into trabaja_en values
+(1111,11,50),
+(2222,22,30),
+(3333,33,13),
+(4444,44,60),
+(5555,11,45);
+
+insert into lugar values
+(1,'Lindavista'),
+(2,'Centro'),
+(3,'Polanco'),
+(4,'Poniente'),
+(5,'Sur');
+
+select nombre,fechaNac
+from empleado
+where apPa='Torres' and nombre='Luis'
+
+select nombre, direccion 
+from empleado
+join departamento
+on nomD='Investigacion' and numdAds=numD
+
+select *
+from empleado
+where numdAds=5
+
+select numP,numDC,apPa,direccion,fechaNac
+from empleado
+join proyecto
+on lugar='Ala A'
+join departamento
+on numdAds=numD and numD=numDC
+
+select nombre, apPa,apMa,nombreS,apPaS,apMaS
+from empleado,empleado as supervisor(nombreS,apPaS,apMaS,nssS)
+where empleado.nssSup=nssS
+
+select nombre, apPa,apMa,nombreS,apPaS,apMaS
+from empleado
+join empleado as supervisor(nombreS,apPaS,apMaS,nssS)
+on nssS=empleado.nssSup
+
+select numP
+from proyecto
+join departamento 
+on numDC=numD
+join empleado
+on apPa='Torres' and numdAds=numD
+
+select nombre, apPa,apMa
+from empleado
+where salario>all(select salario
+			  	from empleado
+			  	where numdAds=5)
+				
+select distinct(salario)
+from empleado
+
+select numP,nomP,count(nssEmpT)
+from trabaja_en
+join proyecto
+on numP=numPT
+group by numP,nssEmpT
+
+select numdAds,sexo,count(sexo)
+from empleado
+group by numdAds,sexo
+
+select numP,nomP,count(nssEmpT)
+from trabaja_en
+join proyecto
+on numP=numPT
+group by numP,nomP
+having count(nssEmpT)>=2
+
+select numP,nomP
+from proyecto
+where 1>(select count(nssEmpT)
+		from trabaja_en
+		join proyecto
+		on numP=numPT
+		group by numP,nomP
+		having count(nssEmpT)>=2)
+
+select nomD, nomP, numP,nss
+from proyecto
+join departamento
+on numDC=numD
+join empleado
+on numdAds=numD
+
+select *
+from empleado
+where nssSup is null
+
+
+
+
+
+
+

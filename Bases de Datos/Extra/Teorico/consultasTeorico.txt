@@ -1,0 +1,125 @@
+create table libro(
+	idLibro int not null,
+	titulo char(15),
+	nombreEditorial char(15),
+	constraint cveLibro
+		primary key (idLibro)
+)
+
+create table editorial(
+	nombreEditorial char(15) not null,
+	direccion char(15),
+	telefono char(15),
+	constraint cvEditorial
+		primary key (nombreEditorial)
+)
+
+alter table libro
+	add constraint cveNombEdit
+		foreign key(nombreEditorial)references editorial(nombreEditorial)
+
+create table autores_Libros(
+	idLibro int not null,
+	nombreAutor char(15) not null,
+	constraint cveAutorLib
+		primary key(idLibro,nombreAutor),
+	constraint cveIdlib
+		foreign key (idLibro)references libro(idLibro)
+)
+create table copias_Libros(
+	idLibro int not null,
+	idSucursal int not null,
+	constraint cveCopiasLib
+		primary key(idLibro,idSucursal),
+	constraint idLibrCop
+		foreign key (idLibro)references libro(idLibro)
+)
+
+create table prestamo(
+	idLibro int not null,
+	numTrajeta int not null,
+	idSucursal int not null,
+	fechaSale date,
+	dechaDevol date,
+	constraint cvePrestamo
+		primary key(idLibro, numTrajeta, idSucursal),
+	constraint cveIdLibPres
+		foreign key(idLibro)references libro(idLibro)
+)
+
+create table sucursal_biblioteca(
+	idSucursal int not null,
+	nombreSucursal char(15),
+	direccion char(15),
+	constraint cveBibl
+		primary key(idSucursal)
+)
+
+create table lector(
+	numeroTarjeta int not null,
+	nombre char(15),
+	direccion char(15),
+	telefono char(15),
+	constraint cveLector
+		primary key(numeroTarjeta)
+)
+
+alter table prestamo
+	add constraint cveNumTPres
+			foreign key(numTrajeta)references lector(numeroTarjeta)
+			
+alter table prestamo
+	add constraint cveIdSucPres
+		foreign key(idSucursal) references sucursal_biblioteca(idSucursal)
+		
+alter table copias_libros
+	add constraint cveIdCopia
+		foreign key (idSucursal) references sucursal_biblioteca(idSucursal)
+		
+select titulo, nombre, lector.direccion
+from lector, libro, sucursal_Biblioteca,prestamo
+where prestamo.idSucursal=any(select idSucursal
+				 from sucursal_Biblioteca
+				 where direccion='Lindavista')
+and dechaDevol='2021-12-14' 
+
+
+select lector.nombre
+from lector
+
+union
+
+select nombreAutor
+from autores_Libros
+
+
+
+select nombreSucursal,count(idLibro) as LibroEnPrestamo
+from sucursal_Biblioteca,prestamo
+group by nombreSucursal
+
+
+
+select nombreAutor,count(nombreAutor)as veces
+from autores_Libros
+group by nombreAutor
+order by veces desc limit 1
+
+
+select nombreEditorial,count(nombreEditorial)as veces
+from libro
+group by nombreEditorial
+having count(nombreEditorial)>=2
+
+create function nombre_funcion() return trigger
+as $$
+begin
+
+return new;
+end $$
+language plpgsql
+
+create trigger tr_nombre()
+after insert or update on tabla_nombre
+for each row
+execute procedure nombre_Funcion();

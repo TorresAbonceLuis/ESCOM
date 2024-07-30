@@ -1,0 +1,33 @@
+insert into cliente values (123,'12f','Luis','Torres',null,123);
+insert into cliente values (038,'1r2','Jorge','Jimenez',null,123);
+insert into cliente values (908,'12f','Orlando','Ortiz','Jiminez',038);
+insert into cliente values (566,'15g','Sebastian','Garcia',null,123);
+insert into cliente values (999,'12v','Juan','Perez','Torres',908);
+
+insert into telefonocontacto values ('5584179546',123);
+insert into telefonocontacto values ('5589381925',038);
+insert into telefonocontacto values ('5564887845',908);
+insert into telefonocontacto values ('5512764156',566);
+insert into telefonocontacto values ('5586746273',999);
+
+insert into garage values('Estacionamiento CDMX');
+insert into garage values('Estacionamiento Acapulco');
+
+insert into agencia values 
+('Agencia CDMX'),
+('Agencia Acapulco')
+
+insert into coche values 
+(15,1223,'Renault','Negro',900,1,'Estacionamiento CDMX',),
+(15,1224,'Nissan','Azul',850,2,'Estacionamiento CDMX'),
+(17,4433,'Seat','Rojo Vino',900,5,'Estacionamiento Acapulco'),
+(17,2323,'Chevrolet','Amarillo',1000,8,'Estacionamiento Acapulco'),
+(15,1235,'Susuki','Azul',1000,3,'Estacionamiento CDMX')
+
+
+insert into reservacion values
+(1245,'2020-11-06','2020-11-09',123,'Agencia CDMX'),
+(1245,'2020-11-06','2020-11-09',566,'Agencia Acapulco'),
+(155,'2021-01-15','2021-01-17',908,'Agencia CDMX'),
+(1266,'202-05-06','2021-05-07',999,'Agencia Acapulco'),
+(1234,'2021-10-01','2021-10-04',038,'Agencia CDMX')

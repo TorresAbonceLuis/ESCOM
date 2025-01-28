@@ -1,5 +1,5 @@
 # ESCOM
-Toda los trabajos de materias de programacion de la carrera:
+Todos los trabajos realizado en la carrera:
 
 Profesores:
 

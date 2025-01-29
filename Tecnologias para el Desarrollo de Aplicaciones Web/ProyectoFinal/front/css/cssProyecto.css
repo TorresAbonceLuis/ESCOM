@@ -1,0 +1,76 @@
+
+
+#arreglo{
+    padding-left: 50px;
+}
+
+#vermas{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#letras{
+    font-size: medium;
+    font-weight: 400;
+}
+
+#imagen-ipn-2{
+   max-width: 100px;
+   max-height: 90px;
+}
+
+#clave{
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+#actualizar{
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.card-image{
+    margin-top: 15px;
+}
+
+#card-title{
+    margin-left: 50px;
+}
+
+#textoCendi{
+    font-weight: 200px !important;
+    font-size: 50px !important;
+}
+
+#nav-mobile{
+    margin-right: 10px;
+}
+
+.nav-wrapper{
+    font-weight: 400;
+}
+
+#btn-reset{
+    margin-top: 20px;
+    margin-left: 45px;
+}
+
+#fieldset1{
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+#fieldset2{
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+#fieldset3{
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+#fieldset4{
+    margin-right: 30px;
+    margin-left: 30px;
+}

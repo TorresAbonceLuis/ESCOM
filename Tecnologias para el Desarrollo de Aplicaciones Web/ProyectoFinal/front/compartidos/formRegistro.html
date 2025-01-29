@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+     
+<div class="container">
+    
+        <form action="/cendi/back/BD/ActualizarDatos.php" method="get" id="formulario">
+            <fieldset>
+                <legend><h1 class="mt-4 mb-4">DATOS GENERALES</h1></legend>
+                <div class="mb-3">
+                    <label class="form-label" for="cendi">CENDI</label>
+                    <select  name="cendi" id="cendi" class="form-select" required>
+                        <option value="sel" disabled selected>Seleccione su CENDI</option>
+                        <option value="Amalia Solórzano de Cárdenas" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/IPN-Default.png">CENDI “Amalia Solórzano de Cárdenas” </option>
+                        <option value="Clementina Batalla de Bassols" disabled data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/IPN-Default.png">CENDI “Clementina Batalla de Bassols”</option>
+                        <option value="Eva Sámano de López Mateos" disabled data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/IPN-Default.png">CENDI “Eva Sámano de López Mateos”</option>
+                        <option value="Laura Pérez de Bátiz" disabled data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/IPN-Default.png">CENDI “Laura Pérez de Bátiz” </option>
+                        <option value="Margarita Salazar de Erro" disabled data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/IPN-Default.png">CENDI “Margarita Salazar de Erro”</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="folio">Folio (Boleta)</label>
+                    <input  class="form-control" name="folio" id="folio" type="text" data-length="10">
+                    <div class="invalid-feedback" >El folio debe tener 10 digitos o bien el formato PP o PE seguido de 8 numeros</div>
+                </div>
+    
+                <div class="mb-3">
+                    <label class="form-label" for="grupo">Grupo</label>
+                    <select class="form-select" name="grupo" id="grupo">
+                        <option value="sel" disabled selected>Seleccione grupo</option>
+                        <option value="Lac I-II">Lac I - II </option>
+                        <option value="Lac III - Mat I">Lac III - Mat I</option>
+                        <option value="Mat IIA">Mat IIA</option>
+                        <option value="Mat IIB">Mat IIB</option>
+                        <option value="PIA y PIB">PIA y PIB </option>
+                        <option value="PIIA y PIIB">PIIA y PIIB </option>
+                        <option value="PIIIA y PIIIB ">PIIIA y PIIIB </option>
+                    </select>
+                </div>
+            </fieldset>
+    
+            <fieldset>
+                <legend><h5>DATOS DEL O LA DERECHOHABIENTE:</h5></legend>
+    
+                <div class="mb-3">
+                    <label class="form-label" for="foto_derecho">Fotorafía</label>
+                    <input type="file" class="form-control" name="foto_derecho" id="foto_derecho"/>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-4 mb-3 ">
+                        <label class="form-label" for="primer_apellido_derecho">Primer Apellido</label>
+                        <input  class="form-control" name="primer_apellido_derecho" id="primer_apellido_derecho" type="text">
+                        <div class="invalid-feedback" >Este campo sólo debe contener letras</div>
+                    </div>
+                    <div class="col-sm-12 col-md-4 mb-3">
+                        <label class="form-label" for="segundo_apellido_derecho">Segundo Apellido</label>
+                        <input class="form-control" name="segundo_apellido_derecho" id="segundo_apellido_derecho" type="text">
+                        <div class="invalid-feedback" >Este campo sólo debe contener letras</div>
+                    </div>
+                    <div class="col-sm-12 col-md-4 mb-3">
+                        <label class="form-label" for="nombre_derecho">Nombre(s)</label>
+                        <input class="form-control" name="nombre_derecho" id="nombre_derecho" type="text">
+                        <div class="invalid-feedback" >Este campo sólo debe contener letras</div>
+                    </div>
+                </div>
+    
+                <fieldset>
+                    <legend>Domicilio particular</legend>
+                        <div class="mb-3">
+                            <label class="form-label" for="calle">Calle</label>
+                            <input  name="calle" id="calle" type="text" class="form-control">
+                            <div class="invalid-feedback" >Este campo sólo debe contener letras</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="noExt">Número exterior</label>
+                            <input  name="noExt" id="noExt" type="text" class="form-control">
+                            <div class="invalid-feedback" >Este campo sólo debe contener numeros</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="noInt">Número interior</label>
+                            <input  name="noInt" id="noInt" type="text" class="form-control">
+                            <div class="invalid-feedback" >Este campo sólo debe contener numeros</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="colonia">Colonia</label>
+                            <input  name="colonia" id="colonia" type="text"class="form-control">
+                            <div class="invalid-feedback" >Este campo sólo debe contener letras</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="alcaldia">Alcaldía o municipio</label>
+                            <input  name="alcaldia" id="alcaldia" type="text" class="form-control">
+                            <div class="invalid-feedback" >Este campo sólo debe contener letras</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="entidad">Entidad Federativa</label>
+                            <select class="form-select" name="entidad" id="entidad">
+                                <option value="sel" disabled selected>Seleccione su entidad</option>
+                                <option value="Aguascalientes">Aguascalientes</option>
+                                <option value="Baja California">Baja California</option>
+                                <option value="Baja California Sur">Baja California Sur</option>
+                                <option value="Campeche">Campeche</option>
+                                <option value="Coahuila">Coahuila</option>
+                                <option value="Colima">Colima</option>
+                                <option value="Chiapas">Chiapas</option>
+                                <option value="Chihuahua">Chihuahua</option>
+                                <option value="Ciudad de México">Ciudad de México</option>
+                                <option value="Durango">Durango</option>
+                                <option value="Guanajuato">Guanajuato</option>
+                                <option value="Guerrero">Guerrero</option>
+                                <option value="Hidalgo">Hidalgo</option>
+                                <option value="Jalisco">Jalisco</option>
+                                <option value="Estado de México">Estado de México</option>
+                                <option value="Michoacán">Michoacán</option>
+                                <option value="Morelos">Morelos</option>
+                                <option value="Nayarit">Nayarit</option>
+                                <option value="Nuevo León">Nuevo León</option>
+                                <option value="Oaxaca">Oaxaca</option>
+                                <option value="Puebla">Puebla</option>
+                                <option value="Querétaro">Querétaro</option>
+                                <option value="Quintana Roo">Quintana Roo</option>
+                                <option value="San Luis Potosí">San Luis Potosí</option>
+                                <option value="Sinaloa">Sinaloa</option>
+                                <option value="Sonora">Sonora</option>
+                                <option value="Tabasco">Tabasco</option>
+                                <option value="Tamaulipas">Tamaulipas</option>
+                                <option value="Tlaxcala">Tlaxcala</option>
+                                <option value="Veracruz">Veracruz</option>
+                                <option value="Yucatán">Yucatán</option>
+                                <option value="Zacatecas">Zacatecas</option>
+                                <option value="Nacido en el extranjero">Nacido en el extranjero</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="cp">Código postal</label>
+                            <input  name="cp" id="cp" type="number" class="form-control">
+                            <div class="invalid-feedback" >Este campo sólo debe contener 5 digitos</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="telefono_fijo">Telefono Fijo</label>
+                            <input  name="telefono_fijo" id="telefono_fijo" type="text"class="form-control">
+                            <div class="invalid-feedback" >Este campo sólo debe contener 10 digitos</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="telefono_celular">Telefono celular</label>
+                            <input  name="telefono_celular" id="telefono_celular" type="text" class="form-control">
+                            <div class="invalid-feedback" >Este campo sólo debe contener 10 digitos</div>
+                        </div>
+                </fieldset>
+                <div class="mb-3">
+                    <label class="form-label" for="email_derecho">Email</label>
+                    <input  name="email_derecho" id="email_derecho" type="email"class="form-control">
+                    <div class="invalid-feedback" >Este campo debe tener el formato: correo@gmail.com</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Ocupacion</label>
+                    <select class="form-select" name="ocupacion" id="ocupacion">
+                        <option value="sel" disabled selected>Escoja su ocupacion</option>
+                        <option value="Docente">Docente</option>
+                        <option value="PAAE">PAAE</option>
+                        <option value="Funcionario">Funcionario(a)</option>
+                        <option value="Estudiante">Estudiante</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+    
+                <div class="mb-3">
+                    <label class="form-label" for="curp_derecho">CURP</label>
+                    <input class="form-control" name="curp_derecho" id="curp_derecho" type="text" data-length="18">
+                    <div class="invalid-feedback" >Formato de curp incorrecto</div>
+                </div>
+    
+                <div class="mb-3">
+                    <label class="form-label" for="puesto">Nombre de la plaza o puesto</label>
+                    <input class="form-control name="puesto" id="puesto" type="text"">
+                    <div class="invalid-feedback" >Este campo sólo debe contener letras</div>
+                </div>
+    
+                <div class="mb-3">
+                    <label class="form-label" for="sueldo">Sueldo mensual</label>
+                    <input class="form-control" name="sueldo" id="sueldo" type="text">
+                    <div class="invalid-feedback" >Este campo sólo debe contener numeros</div>
+                </div>
+    
+                <div class="mb-3">
+                    <label for="numero_empleado">Número de empleado</label>
+                    <input class="form-control" name="numero_empleado" id="numero_empleado" type="text">
+                    <div class="invalid-feedback" >Este campo sólo debe contener de 5 a 7 numeros</div>
+                </div>
+    
+                <div class="mb-3">
+                    <label class="form-label" for="adscripcion">Adscripcion</label>
+                    <select class="form-select" name="adscripcion" id="adscripcion">
+                        <option value="sel" disabled selected>Seleccione Adscripcion</option>
+                        <optgroup label="Nivel Medio Superior">
+                            <option value="CECyT1" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT1.png">CECyT 1 Gonzalo Vázquez Vela</option>
+                            <option value="CECyT2" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT2.png">CECyT 2 Miguel Bernard</option>
+                            <option value="CECyT3" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT3.png">CECyT 3 Estanislao Ramirez Ruíz</option>
+                            <option value="CECyT4" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT4.png">CECyT 4 Lázaro Cárdenas</option>
+                            <option value="CECyT5" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT5.png">CECyT 5 Benito Juárez</option>
+                            <option value="CECyT6" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT6.png">CECyT 6 Miguel Othón de Mendizábal</option>
+                            <option value="CECyT7" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT7.png">CECyT 7 Cuauhtémoc</option>
+                            <option value="CECyT8" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT8.png">CECyT 8 Narciso Bassols</option>
+                            <option value="CECyT9" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT9.png">CECyT 9 Juan de Dios Bátiz</option>
+                            <option value="CECyT10" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT10.png">CECyT 10 Carlos Vallejo Márquez</option>
+                            <option value="CECyT11" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT11.png">CECyT 11 Wilfrido Massieu</option>
+                            <option value="CECyT12" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT12.png">CECyT 12 José María Morelos</option>
+                            <option value="CECyT13" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT13.png">CECyT 13 Ricardo Flores Magón</option>
+                            <option value="CECyT14" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT14.png">CECyT 14 Luis Enrique Erro</option>
+                            <option value="CECyT15" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT15.png">CECyT 15 Diódoro Antúnez Echegaray</option>
+                            <option value="CECyT16" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT16.jpg">CECyT 16 Hidalgo</option>
+                            <option value="CECyT17" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT17.jpg">CECyT 17 León, Guanajuato</option>
+                            <option value="CECyT18" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/IPN-Default.png">CECyT 18 Zacatecas</option>
+                            <option value="CECyT19" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/IPN-Default.png">CECyT 19 Leona Vicario</option>
+                            <option value="CET1" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CET1.png">CET 1 Walter Cross Buchanan</option>
+                        </optgroup>
+                        <optgroup label="Nivel Superior">
+                            <option value="CICS-MA" data-icon="	https://www.ipn.mx/assets/files/saes/img/escudosNS/CICS-MA.png">CICS MILPA ALTA</option>
+                            <option value="CICS-UST" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/CICS-UST.png">CICS UST</option>
+                            <option value="ENCB" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ENCB.png">ENCB</option>
+                            <option value="ENMH" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ENMH.png">ENMH</option>
+                            <option value="ESCA-STO" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESCA-STO.png">ESCA SANTO TOMAS</option>
+                            <option value="ESCA-TEP" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESCA-TEP.png">ESCA TEPEPAN</option>
+                            <option value="ESCOM" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESCOM.png">ESCOM</option>
+                            <option value="ESE" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESE.png">ESE</option>
+                            <option value="ESEO" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESEO.png">ESEO</option>
+                            <option value="ESFM" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESFM.png">ESFM</option>
+                            <option value="ESIA-TEC" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESIA-TEC.png">ESIA TECAMACHALCO</option>
+                            <option value="ESIA-TIC" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESIA-TIC.png">ESIA TICOMAN</option>
+                            <option value="ESIA-ZAC" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESIA-ZAC.png">ESIA-ZAC</option>
+                            <option value="ESIME-AZC" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESIME-AZC.png">ESIME AZCAPOTZALCO</option>
+                            <option value="ESIME-CULH" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESIME-CULH.png">ESIME CULHUACAN</option>
+                            <option value="ESIME-TIC" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESIME-TIC.png">ESIME TICOMAN</option>
+                            <option value="ESIME-ZAC" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESIME-ZAC.png">ESIME ZACATENCO</option>
+                            <option value="ESIQIE" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESIQIE.png">ESIQIE</option>
+                            <option value="ESIT" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESIT.png">ESIT</option>
+                            <option value="ESM" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESM.png">ESM</option>
+                            <option value="EST" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/EST.png">EST</option>
+                            <option value="UPIBI" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/UPIIBI.png">UPIBI</option>
+                            <option value="UPIICSA" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/UPIICSA.png">UPIICSA</option>
+                            <option value="UPIIG" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/UPIIG.png">UPIIG</option>
+                            <option value="UPIITA" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/UPIITA.png">UPIITA</option>
+                            <option value="UPIIZ" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/UPIIZ.png">UPIIZ</option>
+                            <option value="ENBA" data-icon="https://www.ipn.mx/assets/files/saes/assets/uploads/enba.png">ENBA</option>
+                            <option value="UPIIH" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/IPN-Default.png">UPIIH</option>
+                            <option value="UPIIP" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/upiipLogo-ch.png">UPIIP</option>
+                            <option value="UPIIC" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/IPN-Default.png">UPIIC</option>
+                            <option value="UPIEM" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/IPN-Default.png">UPIEM</option>
+                            <option value="UPIIT" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/IPN-Default.png">UPIIT</option>
+    
+                        </optgroup>
+                        <optgroup label="Area Central">
+                            <option value="AC" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/IPN-Default.png">Area Central</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="horario">Horario de trabajo</label>
+                    <select class="form-select" name="horario" id="horario">
+                        <option value="sel" disabled selected>Seleccione horario</option>
+                        <option value="07:00 a 15:00">07:00 a 15:00</option>
+                        <option value="08:00 a 15:00">08:00 a 15:00</option>
+                        <option value="07:00 a 14:00">07:00 a 14:00</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="extension">Extension</label>
+                    <input class="form-control" name="extension" id="extension" type="number" data-length="5">
+                    <div class="invalid-feedback" >Este campo sólo debe contener de 5 numeros</div>
+                </div>
+    
+                <div class="mb-3">
+                    <label class="form-label" for="foto_autorizada">Fotografía de la persona autorizada</label>
+                    <input type="file" class="form-control" name="foto_autorizada" id="foto_autorizada" />
+                </div>
+            </fieldset>
+    
+            <fieldset>
+                <legend><h5>DATOS DEL CÓNYUGE (PADRE, MADRE):</h5></legend>
+                 <!-- Switch -->
+                <div class="mb-3">
+                    <label class="form-label" for="tieneconyuge">¿Tiene conyuge?</label>
+                    <div id="tieneconyuge" name="tieneconyuge" class="form-check form-switch">
+                        <label id="no" class="form-check-label col"> No</label>
+                        <input class="form-check-input col" name="tienec" id="tienec" type="checkbox">
+                        <label id="si" class="form-check-label col">Sí</label>
+    
+                    </div>
+                </div>
+    
+                <div class="row" id="fila-conyuge">
+                    <div class="mb-3">
+                        <label class="form-label" for="foto_conyuge">Fotografía</label>
+                        <input class="form-control" type="file" name="foto_conyuge" id="foto_conyuge" />
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4 mb-3 ">
+                            <label class="form-label" for="primer_apellido_conyuge">Primer Apellido</label>
+                            <input class="form-control" name="primer_apellido_conyuge" id="primer_apellido_conyuge" type="text">
+                    <div class="invalid-feedback" >Este campo sólo debe contener letras</div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 mb-3 ">
+                            <label class="form-label" for="segundo_apellido_conyuge">Segundo Apellido</label>
+                            <input class="form-control" name="segundo_apellido_conyuge" id="segundo_apellido_conyuge" type="text">
+                            <div class="invalid-feedback" >Este campo sólo debe contener letras</div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 mb-3 ">
+                            <label class="form-label" for="nombre_conyuge">Nombre(s)</label>
+                            <input class="form-control" name="nombre_conyuge" id="nombre_conyuge" type="text">
+                            <div class="invalid-feedback" >Este campo sólo debe contener letras</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <fieldset>
+                            <legend>Domicilio particular</legend>
+                            <div class="mb-3">
+                                <label class="form-label" for="calle_conyuge" title="Ingrese una calle válida">Calle</label>
+                                <input class="form-control" name="calle_conyuge" id="calle_conyuge" type="text">
+                                <div class="invalid-feedback" >Este campo sólo debe contener letras</div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="noExt_conyuge">Número exterior</label>
+                                <input name="noExt_conyuge" id="noExt_conyuge" type="text"class="form-control">
+                                <div class="invalid-feedback" >Este campo sólo debe contener nuemeros</div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="noInt_conyuge">Número interior</label>
+                                <input name="noInt_conyuge" id="noInt_conyuge" type="text"class="form-control">
+                                <div class="invalid-feedback" >Este campo sólo debe contener numeros</div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="colonia_conyuge">Colonia</label>
+                                <input name="colonia_conyuge" id="colonia_conyuge" type="text"class="form-control">
+                                <div class="invalid-feedback" >Este campo sólo debe contener letras</div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="alcaldia_conyuge">Alcaldia o municipio</label>
+                                <input class="form-control" name="alcaldia_conyuge" id="alcaldia_conyuge" type="text">
+                                <div class="invalid-feedback" >Este campo sólo debe contener letras</div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Entidad Federativa</label>
+                                <select  class="form-select" name="entidad_conyuge"  id="entidad_conyuge" >
+                                    <option value="sel" disabled selected>Seleccione su entidad</option>
+                                    <option value="Aguascalientes">Aguascalientes</option>
+                                    <option value="Baja California">Baja California</option>
+                                    <option value="Baja California Sur">Baja California Sur</option>
+                                    <option value="Campeche">Campeche</option>
+                                    <option value="Coahuila">Coahuila</option>
+                                    <option value="Colima">Colima</option>
+                                    <option value="Chiapas">Chiapas</option>
+                                    <option value="Chihuahua">Chihuahua</option>
+                                    <option value="Ciudad de México">Ciudad de México</option>
+                                    <option value="Durango">Durango</option>
+                                    <option value="Guanajuato">Guanajuato</option>
+                                    <option value="Guerrero">Guerrero</option>
+                                    <option value="Hidalgo">Hidalgo</option>
+                                    <option value="Jalisco">Jalisco</option>
+                                    <option value="Estado de México">Estado de México</option>
+                                    <option value="Michoacán">Michoacán</option>
+                                    <option value="Morelos">Morelos</option>
+                                    <option value="Nayarit">Nayarit</option>
+                                    <option value="Nuevo León">Nuevo León</option>
+                                    <option value="Oaxaca">Oaxaca</option>
+                                    <option value="Puebla">Puebla</option>
+                                    <option value="Querétaro">Querétaro</option>
+                                    <option value="Quintana Roo">Quintana Roo</option>
+                                    <option value="San Luis Potosí">San Luis Potosí</option>
+                                    <option value="Sinaloa">Sinaloa</option>
+                                    <option value="Sonora">Sonora</option>
+                                    <option value="Tabasco">Tabasco</option>
+                                    <option value="Tamaulipas">Tamaulipas</option>
+                                    <option value="Tlaxcala">Tlaxcala</option>
+                                    <option value="Veracruz">Veracruz</option>
+                                    <option value="Yucatán">Yucatán</option>
+                                    <option value="Zacatecas">Zacatecas</option>
+                                    <option value="Nacido en el extranjero">Nacido en el extranjero</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="cp_conyuge">Código postal</label>
+                                <input name="cp_conyuge" id="cp_conyuge" type="text"class="form-control">
+                                <div class="invalid-feedback" >Este campo sólo debe contener 5 digitos</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 mb-3 ">
+                                    <label  class="form-label" for="telefono_fijo_conyuge">Telefono Fijo</label>
+                                    <input name="telefono_fijo_conyuge" id="telefono_fijo_conyuge" type="text"class="form-control">
+                                    <div class="invalid-feedback" >Este campo sólo debe contener 10 digitos</div>
+                                </div>
+                                <div class="col-md-4 mb-3 ">
+                                    <label  class="form-label" for="telefono_celular_conyuge">Telefono celular</label>
+                                    <input name="telefono_celular_conyuge" id="telefono_celular_conyuge" type="text" class="form-control">
+                                    <div class="invalid-feedback" >Este campo sólo debe contener 10 digitos</div>
+                                </div>
+                            </div>
+                        </fieldset>
+            <div class="row">
+    
+                <button class="z-depth-3 btn btn-primary waves-effect waves-light" type="submit" value="enviar" id="enviar">
+                    Enviar
+                </button>
+            </div>
+        </form>
+</div>
+
+</body>

@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Import Google Icon Font-->
+    <title>.::Registro::.</title>
+    
+</head>
+
+<body>
+    <header id="navegacion"></header>
+    <h1>Bienvenido</h1>
+    <form action="../back/BD/RegistroBD.php" method="get" id="formulario">
+
+        <fieldset>
+            <legend>DATOS GENERALES</legend>
+            <div class="input-field col s12 m6">
+                <select  name="cendi" id="cendi" class="icons">
+                    <option value="sel" disabled selected>Seleccione su CENDI</option>
+                    <option value="Amalia Solórzano de Cárdenas" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/IPN-Default.png">CENDI “Amalia Solórzano de Cárdenas” </option>
+                    <option value="Clementina Batalla de Bassols" disabled data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/IPN-Default.png">CENDI “Clementina Batalla de Bassols”</option>
+                    <option value="Eva Sámano de López Mateos" disabled data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/IPN-Default.png">CENDI “Eva Sámano de López Mateos”</option>
+                    <option value="Laura Pérez de Bátiz" disabled data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/IPN-Default.png">CENDI “Laura Pérez de Bátiz” </option>
+                    <option value="Margarita Salazar de Erro" disabled data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/IPN-Default.png">CENDI “Margarita Salazar de Erro”</option>
+                </select>
+                <label>Cendi</label>
+            </div>
+
+
+            <div class="file-field input-field">
+                <div class="btn">
+                    <span>Foto</span>
+                    <input  name="foto" type="file" id="foto">
+                </div>
+                <div class="file-path-wrapper">
+                    <input  name="fotoNombre" class="file-path validate" type="text">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <input  name="folio" id="folio" type="text" data-length="10">
+                    <label for="folio">Folio (Boleta)</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <select  name="grupo" id="grupo">
+                        <option value="sel" disabled selected>Seleccione grupo</option>
+                        <option value="Lac I-II">Lac I-II</option>
+                        <option value="Lac III - Mat I">Lac III - Mat I</option>
+                        <option value="Mat IIA">Mat IIA</option>
+                        <option value="Mat IIB">Mat IIB</option>
+                        <option value="PIA y PIB">PIA y PIB </option>
+                        <option value="PIIA y PIIB">PIIA y PIIB </option>
+                        <option value="PIIIA y PIIIB ">PIIIA y PIIIB </option>
+                    </select>
+                    <label>Grupo</label> 
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>DATOS DEL NIÑO O DE LA NIÑA</legend>
+            <div class="row">
+
+                <div class="input-field col s6">
+                    <input  name="primer_apellido" id="primer_apellido" type="text" class="validate">
+                    <label for="primer_apellido">Primer Apellido</label>
+                </div>
+                <div class="input-field col s6">
+                    <input  name="segundo_apellido" id="segundo_apellido" type="text" class="validate">
+                    <label for="segundo_apellido">Segundo Apellido</label>
+                </div>
+                <div class="input-field col s6">
+                    <input  name="nombre" id="nombre" type="text" class="validate">
+                    <label for="nombre">Nombre(s)</label>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input  name="fecha" id="fecha" type="text" class="datepicker">
+                        <label for="fecha">Fecha de Nacimiento</label>
+                    </div>
+                </div>
+                <div class="input-field col s6">
+                    <input  name="edadAnios" id="edadAnios" type="text" class="validate" disabled>
+                    <label class="active" for="edadAnios">Edad (años) </label>
+                </div>
+                
+                <div class="input-field col s6">
+                    <input  name="edadMeses" id="edadMeses" type="text" class="validate" disabled>
+                    <label class="active" for="edadMeses">Meses</label>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input  name="email" id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                        <span class="helper-text" data-error="Invalido" data-success="Valido">Escriba una direccion
+                            valida</span>
+                    </div>
+                </div>
+
+                <div class="input-field col s6">
+                    <input  name="curp" id="curp" type="text" data-length="18">
+                    <label for="curp">CURP</label>
+                </div>
+
+
+
+            </div>
+            <div class="row">
+
+        </fieldset>
+        <fieldset>
+            <legend>DATOS DEL O LA DERECHOHABIENTE:</legend>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input  name="primer_apellido_derecho" id="primer_apellido_derecho" type="text" class="validate">
+                    <label for="primer_apellido_derecho">Primer Apellido</label>
+                </div>
+                <div class="input-field col s6">
+                    <input  name="segundo_apellido_derecho" id="segundo_apellido_derecho" type="text" class="validate">
+                    <label for="segundo_apellido_derecho">Segundo Apellido</label>
+                </div>
+                <div class="input-field col s6">
+                    <input  name="nombre_derecho" id="nombre_derecho" type="text" class="validate">
+                    <label for="nombre_derecho">Nombre(s)</label>
+                </div>
+                <div class="row col s12">
+                    <fieldset>
+                        <legend>Domicilio particular</legend>
+                        <div class="input-field col s4">
+                            <input  name="calle" id="calle" type="text" class="validate">
+                            <label for="calle">Calle</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input  name="noExt" id="noExt" type="text" class="validate">
+                            <label for="noExt">Número exterior</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input  name="noInt" id="noInt" type="text" class="validate">
+                            <label for="noInt">Número interior</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input  name="colonia" id="colonia" type="text" class="validate">
+                            <label for="colonia">Colonia</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input  name="alcaldia" id="alcaldia" type="text" class="validate">
+                            <label for="alcaldia">Alcaldia o municipio</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <select  name="entidad" id="entidad">
+                                <option value="sel" disabled selected>Seleccione su entidad</option>
+                                <option value="Aguascalientes">Aguascalientes</option>
+                                <option value="Baja California">Baja California</option>
+                                <option value="Baja California Sur">Baja California Sur</option>
+                                <option value="Campeche">Campeche</option>
+                                <option value="Coahuila">Coahuila</option>
+                                <option value="Colima">Colima</option>
+                                <option value="Chiapas">Chiapas</option>
+                                <option value="Chihuahua">Chihuahua</option>
+                                <option value="Ciudad de México">Ciudad de México</option>
+                                <option value="Durango">Durango</option>
+                                <option value="Guanajuato">Guanajuato</option>
+                                <option value="Guerrero">Guerrero</option>
+                                <option value="Hidalgo">Hidalgo</option>
+                                <option value="Jalisco">Jalisco</option>
+                                <option value="Estado de México">Estado de México</option>
+                                <option value="Michoacán">Michoacán</option>
+                                <option value="Morelos">Morelos</option>
+                                <option value="Nayarit">Nayarit</option>
+                                <option value="Nuevo León">Nuevo León</option>
+                                <option value="Oaxaca">Oaxaca</option>
+                                <option value="Puebla">Puebla</option>
+                                <option value="Querétaro">Querétaro</option>
+                                <option value="Quintana Roo">Quintana Roo</option>
+                                <option value="San Luis Potosí">San Luis Potosí</option>
+                                <option value="Sinaloa">Sinaloa</option>
+                                <option value="Sonora">Sonora</option>
+                                <option value="Tabasco">Tabasco</option>
+                                <option value="Tamaulipas">Tamaulipas</option>
+                                <option value="Tlaxcala">Tlaxcala</option>
+                                <option value="Veracruz">Veracruz</option>
+                                <option value="Yucatán">Yucatán</option>
+                                <option value="Zacatecas">Zacatecas</option>
+                                <option value="Nacido en el extranjero">Nacido en el extranjero</option>
+                            </select>
+                            <label>Entidad Federativa</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input  name="cp" id="cp" type="text" class="validate">
+                            <label for="cp">Código postal</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input  name="telefono_fijo" id="telefono_fijo" type="text" class="validate">
+                            <label for="telefono_fijo">Telefono Fijo</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input  name="telefono_celular" id="telefono_celular" type="text" class="validate">
+                            <label for="telefono_celular">Telefono celular</label>
+                        </div>
+                    </fieldset>
+                </div>
+
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input  name="email_derecho" id="email_derecho" type="email" class="validate">
+                        <label for="email_derecho">Email</label>
+                        <span class="helper-text" data-error="Invalido" data-success="Valido">Escriba una direccion
+                            valida</span>
+                    </div>
+                </div>
+                <div class="input-field col s12">
+                    <select  name="ocupacion" id="ocupacion">
+                        <option value="sel" disabled selected>Escoja su ocupacion</option>
+                        <option value="Docente">Docente</option>
+                        <option value="PAAE">PAAE</option>
+                        <option value="Funcionario">Funcionario(a)</option>
+                        <option value="Estudiante">Estudiante</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                    <label>Ocupacion</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input  name="curp_derecho" id="curp_derecho" type="text" data-length="18">
+                    <label for="curp_derecho">CURP</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input  name="puesto" id="puesto" type="text" class="validate">
+                    <label for="puesto">Nombre de la plaza o puesto</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input  name="sueldo" id="sueldo" type="text" class="validate">
+                    <label for="sueldo">Sueldo mensual</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input  name="numero_empleado" id="numero_empleado" type="text" class="validate">
+                    <label for="numero_empleado">Numero de empleado</label>
+                </div>
+
+                <div class="input-field col s12">
+                    <select  name="adscripcion" id="adscripcion">
+                        <option value="sel" disabled selected>Seleccione Adscripcion</option>
+                        <optgroup label="Nivel Medio Superior">
+                            <option value="CECyT1" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT1.png">CECyT 1 Gonzalo Vázquez Vela</option>
+                            <option value="CECyT2" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT2.png">CECyT 2 Miguel Bernard</option>
+                            <option value="CECyT3" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT3.png">CECyT 3 Estanislao Ramirez Ruíz</option>
+                            <option value="CECyT4" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT4.png">CECyT 4 Lázaro Cárdenas</option>
+                            <option value="CECyT5" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT5.png">CECyT 5 Benito Juárez</option>
+                            <option value="CECyT6" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT6.png">CECyT 6 Miguel Othón de Mendizábal</option>
+                            <option value="CECyT7" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT7.png">CECyT 7 Cuauhtémoc</option>
+                            <option value="CECyT8" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT8.png">CECyT 8 Narciso Bassols</option>
+                            <option value="CECyT9" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT9.png">CECyT 9 Juan de Dios Bátiz</option>
+                            <option value="CECyT10" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT10.png">CECyT 10 Carlos Vallejo Márquez</option>
+                            <option value="CECyT11" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT11.png">CECyT 11 Wilfrido Massieu</option>
+                            <option value="CECyT12" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT12.png">CECyT 12 José María Morelos</option>
+                            <option value="CECyT13" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT13.png">CECyT 13 Ricardo Flores Magón</option>
+                            <option value="CECyT14" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT14.png">CECyT 14 Luis Enrique Erro</option>
+                            <option value="CECyT15" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT15.png">CECyT 15 Diódoro Antúnez Echegaray</option>
+                            <option value="CECyT16" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT16.jpg">CECyT 16 Hidalgo</option>
+                            <option value="CECyT17" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CECyT17.jpg">CECyT 17 León, Guanajuato</option>
+                            <option value="CECyT18" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/IPN-Default.png">CECyT 18 Zacatecas</option>
+                            <option value="CECyT19" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/IPN-Default.png">CECyT 19 Leona Vicario</option>
+                            <option value="CET1" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNMS/CET1.png">CET 1 Walter Cross Buchanan</option>
+                        </optgroup>
+                        <optgroup label="Nivel Superior">
+                            <option value="CICS-MA" data-icon="	https://www.ipn.mx/assets/files/saes/img/escudosNS/CICS-MA.png">CICS MILPA ALTA</option>
+                            <option value="CICS-UST" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/CICS-UST.png">CICS UST</option>
+                            <option value="ENCB" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ENCB.png">ENCB</option>
+                            <option value="ENMH" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ENMH.png">ENMH</option>
+                            <option value="ESCA-STO" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESCA-STO.png">ESCA SANTO TOMAS</option>
+                            <option value="ESCA-TEP" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESCA-TEP.png">ESCA TEPEPAN</option>
+                            <option value="ESCOM" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESCOM.png">ESCOM</option>
+                            <option value="ESE" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESE.png">ESE</option>
+                            <option value="ESEO" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESEO.png">ESEO</option>
+                            <option value="ESFM" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESFM.png">ESFM</option>
+                            <option value="ESIA-TEC" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESIA-TEC.png">ESIA TECAMACHALCO</option>
+                            <option value="ESIA-TIC" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESIA-TIC.png">ESIA TICOMAN</option>
+                            <option value="ESIA-ZAC" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESIA-ZAC.png">ESIA-ZAC</option>
+                            <option value="ESIME-AZC" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESIME-AZC.png">ESIME AZCAPOTZALCO</option>
+                            <option value="ESIME-CULH" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESIME-CULH.png">ESIME CULHUACAN</option>
+                            <option value="ESIME-TIC" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESIME-TIC.png">ESIME TICOMAN</option>
+                            <option value="ESIME-ZAC" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESIME-ZAC.png">ESIME ZACATENCO</option>
+                            <option value="ESIQIE" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESIQIE.png">ESIQIE</option>
+                            <option value="ESIT" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESIT.png">ESIT</option>
+                            <option value="ESM" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/ESM.png">ESM</option>
+                            <option value="EST" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/EST.png">EST</option>
+                            <option value="UPIBI" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/UPIIBI.png">UPIBI</option>
+                            <option value="UPIICSA" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/UPIICSA.png">UPIICSA</option>
+                            <option value="UPIIG" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/UPIIG.png">UPIIG</option>
+                            <option value="UPIITA" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/UPIITA.png">UPIITA</option>
+                            <option value="UPIIZ" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/UPIIZ.png">UPIIZ</option>
+                            <option value="ENBA" data-icon="https://www.ipn.mx/assets/files/saes/assets/uploads/enba.png">ENBA</option>
+                            <option value="UPIIH" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/IPN-Default.png">UPIIH</option>
+                            <option value="UPIIP" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/upiipLogo-ch.png">UPIIP</option>
+                            <option value="UPIIC" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/IPN-Default.png">UPIIC</option>
+                            <option value="UPIEM" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/IPN-Default.png">UPIEM</option>
+                            <option value="UPIIT" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/IPN-Default.png">UPIIT</option>
+                           
+                        </optgroup>
+                        <optgroup label="Area Central">
+                            <option value="AC" data-icon="https://www.ipn.mx/assets/files/saes/img/escudosNS/IPN-Default.png">Area Central</option>
+                        </optgroup>
+
+                    </select>
+                    
+                    <label>Adscripcion</label>
+                </div>
+
+                <div class="input-field col s12">
+                    <select  name="horario" id="horario">
+                        <option value="sel" disabled selected>Seleccione horario</option>
+                        <option value="07:00 a 15:00">07:00 a 15:00</option>
+                        <option value="08:00 a 15:00">08:00 a 15:00</option>
+                        <option value="07:00 a 14:00">07:00 a 14:00</option>
+                    </select>
+                    <label>Horario de trabajo</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input  name="extension" id="extension" type="text" data-length="5">
+                    <label for="extension">Extension</label>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>DATOS DEL CÓNYUGE (PADRE, MADRE):</legend>
+            <div class="row">
+                <!-- Switch -->
+                <label for="tieneconyuge">Tiene Conyuge</label>
+                <div id="tieneconyuge" name="tieneconyuge" class="switch">
+                    <label>
+                        No 
+                        <input name="tienec" id="tienec" type="checkbox">
+                        <span class="lever"></span>
+                        Sí
+                    </label>
+                </div>
+
+            </div>
+            <div class="row" id="fila-conyuge">
+                <div class="input-field col s6">
+                    <input name="primer_apellido_conyuge" id="primer_apellido_conyuge" type="text" class="validate">
+                    <label for="primer_apellido_conyuge">Primer Apellido</label>
+                </div>
+                <div class="input-field col s6">
+                    <input name="segundo_apellido_conyuge" id="segundo_apellido_conyuge" type="text" class="validate">
+                    <label for="segundo_apellido_conyuge">Segundo Apellido</label>
+                </div>
+                <div class="input-field col s6">
+                    <input name="nombre_conyuge" id="nombre_conyuge" type="text" class="validate">
+                    <label for="nombre_conyuge">Nombre(s)</label>
+                </div>
+                <div class="row col s12">
+
+
+                    <fieldset>
+                        <legend>Domicilio particular</legend>
+                        <div class="input-field col s4">
+                            <input name="calle_conyuge" id="calle_conyuge" type="text" class="validate">
+                            <label for="calle_conyuge">Calle</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input name="noExt_conyuge" id="noExt_conyuge" type="text" class="validate">
+                            <label for="noExt_conyuge">Número exterior</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input name="noInt_conyuge" id="noInt_conyuge" type="text" class="validate">
+                            <label for="noInt_conyuge">Número interior</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input name="colonia_conyuge" id="colonia_conyuge" type="text" class="validate">
+                            <label for="colonia_conyuge">Colonia</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input name="alcaldia_conyuge" id="alcaldia_conyuge" type="text" class="validate">
+                            <label for="alcaldia_conyuge">Alcaldia o municipio</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <select  name="entidad_conyuge">
+                                <option value="sel" disabled selected>Seleccione su entidad</option>
+                                <option value="Aguascalientes">Aguascalientes</option>
+                                <option value="Baja California">Baja California</option>
+                                <option value="Baja California Sur">Baja California Sur</option>
+                                <option value="Campeche">Campeche</option>
+                                <option value="Coahuila">Coahuila</option>
+                                <option value="Colima">Colima</option>
+                                <option value="Chiapas">Chiapas</option>
+                                <option value="Chihuahua">Chihuahua</option>
+                                <option value="Ciudad de México">Ciudad de México</option>
+                                <option value="Durango">Durango</option>
+                                <option value="Guanajuato">Guanajuato</option>
+                                <option value="Guerrero">Guerrero</option>
+                                <option value="Hidalgo">Hidalgo</option>
+                                <option value="Jalisco">Jalisco</option>
+                                <option value="Estado de México">Estado de México</option>
+                                <option value="Michoacán">Michoacán</option>
+                                <option value="Morelos">Morelos</option>
+                                <option value="Nayarit">Nayarit</option>
+                                <option value="Nuevo León">Nuevo León</option>
+                                <option value="Oaxaca">Oaxaca</option>
+                                <option value="Puebla">Puebla</option>
+                                <option value="Querétaro">Querétaro</option>
+                                <option value="Quintana Roo">Quintana Roo</option>
+                                <option value="San Luis Potosí">San Luis Potosí</option>
+                                <option value="Sinaloa">Sinaloa</option>
+                                <option value="Sonora">Sonora</option>
+                                <option value="Tabasco">Tabasco</option>
+                                <option value="Tamaulipas">Tamaulipas</option>
+                                <option value="Tlaxcala">Tlaxcala</option>
+                                <option value="Veracruz">Veracruz</option>
+                                <option value="Yucatán">Yucatán</option>
+                                <option value="Zacatecas">Zacatecas</option>
+                                <option value="Nacido en el extranjero">Nacido en el extranjero</option>
+                            </select>
+                            <label>Entidad Federativa</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input name="cp_conyuge" id="cp_conyuge" type="text" class="validate">
+                            <label for="cp_conyuge">Código postal</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input name="telefono_fijo_conyuge" id="telefono_fijo_conyuge" type="text" class="validate">
+                            <label for="telefono_fijo_conyuge">Telefono Fijo</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input name="telefono_celular_conyuge" id="telefono_celular_conyuge" type="text"
+                                class="validate">
+                            <label for="telefono_celular_conyuge">Telefono celular</label>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="input-field col s6">
+                    <input name="lugar_trabajo_conyuge" id="lugar_trabajo_conyuge" type="text" class="validate">
+                    <label for="lugar_trabajo_conyuge">Lugar de trabajo</label>
+                </div>
+                <div class="input-field col s6">
+                    <input name="domicilio_trabajo_conyuge" id="domicilio_trabajo_conyuge" type="text" class="validate">
+                    <label for="domicilio_trabajo_conyuge">Domicilio del trabajo</label>
+                </div>
+                <div class="input-field col s6">
+                    <input name="telefono_trabajo_conyuge" id="telefono_trabajo_conyuge" type="text" class="validate">
+                    <label for="telefono_trabajo_conyuge">Telefono del trabajo</label>
+                </div>
+                <div class="input-field col s6">
+                    <input name="extension_conyuge" id="extension_conyuge" type="text" class="validate">
+                    <label for="extension_conyuge">Extension</label>
+                </div>
+            </div>
+            </div>
+        </fieldset>
+
+        <div class="row">
+            <a id="btn-reset" class="waves-effect waves-light btn">Limpiar</a>
+            <button class="btn waves-effect waves-light" type="submit" onclick="validateFields();" name="action">Enviar
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+    </form>
+    <div class="row">
+        
+        <button id="btn-imprimir" class="btn waves-effect waves-light btn-imprimir"  name="imprimir">Ver cita
+            <i class="material-icons right">print</i>
+        </button>
+    </div>
+    <footer id="futer"></footer>
+    
+    
+</body>
+<!--
+<script src="https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js">
+</script>
+<script src="https://www.gstatic.com/firebasejs/9.8.2/firebase-storage.js"></script>
+-->
+
+   <!--
+<script type="module">
+    // Import the functions you need from the SDKs you need
+   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+   import { getStorage, ref, uploadBytesResumable, getDownloadURL} from "https://www.gstatic.com/firebasejs/9.8.2/firebase-storage.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyAhbifQ26AXAHwEfLfWHsy-zUpgUFJ5RU4",
+      authDomain: "cendi-c14d4.firebaseapp.com",
+      projectId: "cendi-c14d4",
+      storageBucket: "cendi-c14d4.appspot.com",
+      messagingSenderId: "698358442422",
+      appId: "1:698358442422:web:3b294082c1704d543d7917",
+      measurementId: "G-8G6YYRHKLQ"
+    };
+    
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const storage = getStorage();
+    var alumno;
+
+    
+        function enviaJSON(informacion, actionUrl){
+            $.ajax({
+                type: "POST",
+                url: actionUrl,
+                data: informacion, // envia el json
+                success: function (data) {
+                    let jsonData = $.parseJSON(data);
+                    alert(data);
+                    if(jsonData.estado == 0 && jsonData.folio == alumno.folio){
+                        alert("Cita generada, de clic en 'ver cita'");
+                        $('#btn-imprimir').show();
+                    }
+                }
+            });
+        }
+
+        function subeFoto( informacion, actionUrl ) {
+            var file = $('#foto').prop('files')[0];
+            let nombre = 'images/'+file.name;
+            let storageRef = ref(storage, nombre);
+            alert('Subir imagen al servidor?');
+            uploadBytesResumable(storageRef, file).then((snapshot) => {
+                alert('Imagen subida al servidor');
+                getDownloadURL(snapshot.ref).then((url) => {
+                    informacion.foto = url;
+                    enviaJSON(informacion, actionUrl);
+                }).error(function () {
+                    enviaJSON(informacion, actionUrl);
+                });
+            });
+        }
+        $("#formulario").submit(function (e) {
+
+            e.preventDefault(); // avoid to execute the actual submit of the form.
+
+            if (!validateFields())
+                return false;
+                
+            var form = $(this);
+            var actionUrl = form.attr('action');
+            let fotoURL = "https://www.ipn.mx/assets/files/saes/img/escudosNS/IPN-Default.png";
+            var informacion = {
+
+                cendi: $('#cendi').val(),
+                foto: fotoURL,
+                folio: $('#folio').val(),
+                grupo: $('#grupo').val(),
+
+                //Datos niño
+                primer_apellido: $('#primer_apellido').val(),
+                segundo_apellido: $('#segundo_apellido').val(),
+                nombre: $('#nombre').val(),
+                fecha: $('#fecha').val(),
+                edadAnios: $('#edadAnios').val(),
+                edadMeses: $('#edadMeses').val(),
+                email: $('#email').val(),
+                curp: $('#curp').val(),
+
+                //Datos de derechohabiente
+                primer_apelido_derecho: $('#primer_apelido_derecho').val(),
+                segundo_apellido_derecho: $('#segundo_apellido_derecho').val(),
+                nombre_derecho: $('#nombre_derecho').val(),
+                calle: $('#calle').val(),
+                noExt: $('#noExt').val(),
+                noInt: $('#noInt').val(),
+                colonia: $('#colonia').val(),
+                alcaldia: $('#alcaldia').val(),
+                entidad: $('#entidad').val(),
+                cp: $('#cp').val(),
+                telefono_fijo: $('#telefono_fijo').val(),
+                telefono_celular: $('#telefono_celular').val(),
+                email_derecho: $('#email_derecho').val(),
+                ocupacion: $('#ocupacion').val(),
+                curp_derecho: $('#curp_derecho').val(),
+                puesto: $('#puesto').val(),
+                sueldo: $('#sueldo').val(),
+                numero_empleado: $('#numero_empleado').val(),
+                adscripcion: $('#adscripcion').val(),
+                horario: $('#horario').val(),
+                extension: $('#extension').val(),
+
+                //Datos del conyuge
+                tienec: $('#tienec').val(),
+                primer_apelido_conyuge: $('#primer_apelido_conyuge').val(),
+                segundo_apellido_conyuge: $('#segundo_apellido_conyuge').val(),
+                nombre_conyuge: $('#nombre_conyuge').val(),
+                calle_conyuge: $('#calle_conyuge').val(),
+                noExt_conyuge: $('#noExt_conyuge').val(),
+                noInt_conyuge: $('#noInt_conyuge').val(),
+                colonia_conyuge: $('#colonia_conyuge').val(),
+                alcaldia_conyuge: $('#alcaldia_conyuge').val(),
+                entidad_conyuge: $('#entidad_conyuge').val(),
+                cp_conyuge: $('#cp_conyuge').val(),
+                telefono_fijo_conyuge: $('#telefono_fijo_conyuge').val(),
+                telefono_celular_conyuge: $('#telefono_celular_conyuge').val(),
+                lugar_trabajo_conyuge: $('#lugar_trabajo_conyuge').val(),
+                domicilio_trabajo_conyuge: $('#domicilio_trabajo_conyuge').val(),
+                telefono_trabajo_conyuge: $('#telefono_trabajo_conyuge').val(),
+                extension_conyuge: $('#extension_conyuge').val()
+
+            };
+            alumno = informacion;
+
+            
+
+            subeFoto( informacion, actionUrl);
+
+
+        });
+    
+        $('#btn-imprimir').hide();
+        $('#btn-imprimir').click(function(){
+            let direc = "../back/recupera.php?folio="+alumno.folio;
+            window.open(direc,'_blank');
+        });
+    
+  </script>
+-->
+</html>

@@ -1,0 +1,45 @@
+.navbar-ipn{
+    background-color: #270411 !important;
+}
+
+.form-control.invalid {
+    border-color: red;
+    box-shadow: 0px 0px 4px rgba(202, 30, 30, 0.651);
+  }
+
+  .form-control.valid {
+    border-color: green;
+    box-shadow: 0px 0px 1px rgba(12, 126, 21, 0.651);
+  }
+
+.form-control + .help-text{
+  color: red;
+  opacity: 0;
+  height: 0;
+  transition: opacity .4s ease-out;
+}
+
+
+.form-control.invalid + .help-text{
+    opacity: 1;
+    height: auto;
+    margin-bottom: 20px;
+    transition: opacity .4s ease-out;
+}
+
+
+.card-avatar{
+  background-color: darksalmon;
+
+
+}
+
+
+/* .form-control:active,
+.form-control:focus,
+.btn.focus,
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: black;
+} */

@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+p{color:pink;}
+
+#centrar{
+	text-align: center;
+}
+
+/* Ejemplos de algunas combinaciones de selectores */
+
+/* Elemento elemento (descendiente) */
+
+/*
+div p{
+	text-align:right;
+	border:dotted;
+	border-color:black; 
+	}
+    */
+
+/* Elemento>elemento (hijo) */
+/*
+div>p{
+	text-align:left;
+	border:dashed;
+	border-color:#96F;
+	color:#09F;
+	}
+*/
+	
+/* Elemento+elemento (colocados después de) */
+/*
+div+p{
+	text-align:center;
+	border:double;
+	border-color:red; 
+	}
+*/  
+

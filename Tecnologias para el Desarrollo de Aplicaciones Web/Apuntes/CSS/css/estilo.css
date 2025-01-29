@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url(estilo2.css);
+
+strong{
+	color:#99F; /* lila */
+}
+
+p,h1,h2{
+	text-align:center;
+	color:darkblue;
+	font-family:Tahoma, Geneva, sans-serif;
+	}
+
+.titulo{
+	text-align: center;
+	color: blue;
+	font-weight: bold;
+	font-size: 36px;
+}
+
+.lista{
+	color: orange;
+}
+
+*{
+	color: blueviolet;
+}
+
+
+
+
+
+
+
+
+
+
+

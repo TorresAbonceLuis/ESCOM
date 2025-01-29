@@ -1,0 +1,77 @@
+<?xml  version="1.0"  encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="equipo3.xsl"?>
+<farmacia nombre="Farmacias Guadalajara">
+  <medicamento categoria="Cápsula">
+    <nombre> Omeprazol </nombre>
+    <via_administracion> Oral </via_administracion>
+    <contenido> 10 </contenido>
+    <precio> 100.50 </precio>
+  </medicamento>
+  <medicamento categoria="Cápsula">
+    <nombre> Ibuprofeno </nombre>
+    <via_administracion> Oral </via_administracion>
+    <contenido> 15 </contenido>
+    <precio> 30.00 </precio>
+  </medicamento>
+  <medicamento categoria="Cápsula">
+    <nombre> Naproxeno</nombre>
+    <via_administracion> Oral </via_administracion>
+    <contenido> 12 </contenido>
+    <precio>120.00</precio>
+  </medicamento>
+  <medicamento categoria="Cápsula">
+    <nombre> Amoxicilina</nombre>
+    <via_administracion> Oral </via_administracion>
+    <contenido> 30 </contenido>
+    <precio>50.00</precio>
+  </medicamento>
+  <medicamento categoria="Comprimido">
+    <nombre> Paracetamol </nombre>
+    <via_administracion> Oral </via_administracion>
+    <contenido> 20 </contenido>
+    <precio> 115.00 </precio>
+  </medicamento>
+  <medicamento categoria="Comprimido">
+    <nombre> Metformina </nombre>
+    <via_administracion> Oral </via_administracion>
+    <contenido> 18</contenido>
+    <precio> 75.50</precio>
+  </medicamento>
+  <medicamento categoria="Comprimido">
+    <nombre> Loratadina </nombre>
+    <via_administracion> Oral </via_administracion>
+    <contenido>7</contenido>
+    <precio>30.00 </precio>
+  </medicamento>
+  <medicamento categoria="Comprimido">
+    <nombre> Prednisona</nombre>
+    <via_administracion> Oral </via_administracion>
+    <contenido> 20 </contenido>
+    <precio> 170.00</precio>
+  </medicamento>
+  <medicamento categoria="Jarabe">
+    <nombre> Cloperastina fendizoato</nombre>
+    <via_administracion> Oral </via_administracion>
+    <contenido>120 </contenido>
+    <precio> 50.00 </precio>
+  </medicamento>
+  <medicamento categoria="Jarabe">
+    <nombre> Pepto bismol</nombre>
+    <via_administracion> Oral </via_administracion>
+    <contenido>250 </contenido> 
+    <precio>100 </precio>
+  </medicamento>
+  <medicamento categoria="Jarabe">
+    <nombre> Dextrometofano Hidrobromuro</nombre>
+    <via_administracion> Oral </via_administracion>
+    <contenido>200</contenido>
+    <precio>200.00 </precio>
+  </medicamento>
+  <medicamento categoria="Jarabe">
+    <nombre> Levodropropizina</nombre>
+    <via_administracion> Oral </via_administracion>
+    <contenido> 150</contenido>
+    <precio> 70</precio>
+  </medicamento>
+  
+</farmacia>

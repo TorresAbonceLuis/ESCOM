@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/burrito-sin-f.png" />
+    <!--Import Google Icon Font-->
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/custom.css" />
+
+    <!--Let browser know website is optimized for mobile-->
+   
+    <!--Jquery-->
+    <script type="text/javascript" src="./js/jquery-3.6.0.js"></script>
+   
+   
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/materialize.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+   
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+    <title>.::Registro::.</title>
+    
+</head>
+<body>
+  <div class="container">
+    <div class="container">
+      
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#home">Default</a></li>
+        <li><a href="#menu1">Menu 1</a></li>
+        <li><a href="#menu2">Menu 2</a></li>
+        <li><a href="#menu3">Menu 3</a></li>
+      </ul>
+      <form class="tab-content" method="post" id="myForm">
+        <div class="tab-pane active" id="step1">
+           <p>Here is the content for the first step...</p>
+           <input class="form-control" id="input1" name="input1" required="">
+           <button class="btn btn-default btn-ok" type="button">OK</button>
+        </div>
+        <div class="tab-pane" id="step2">
+           <p>Here is the content for step 2...</p>
+           <input class="form-control" id="input2" name="input2" required="">
+           <button class="btn btn-default btn-ok" type="button">OK</button>
+        </div>
+        <div class="tab-pane" id="step3">
+           <p>Here is the content for step 3...</p>
+           <input class="form-control" id="input3" name="input3" required="">
+           <input class="form-control" id="input4" name="input4" required="">
+           <button class="btn btn-default btn-ok" type="button">OK</button>
+        </div>
+        <div class="tab-pane" id="step4">
+           <p>This is the last step. You're done.</p>
+           <button class="btn btn-default btn-submit" type="submit">Submit</button>
+        </div>
+  </form>
+    </div>
+
+   
+  </div>
+  <script>
+    $(document).ready(function(){
+        $(".nav-tabs a").click(function(){
+            $(this).tab('show');
+        });
+        $('.nav-tabs a').on('shown.bs.tab', function(event){
+            var x = $(event.target).text();         
+            var y = $(event.relatedTarget).text();  
+            $(".act span").text(x);
+            $(".prev span").text(y);
+        });
+    });
+    </script>
+</body>

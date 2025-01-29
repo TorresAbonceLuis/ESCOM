@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/custom.css" />
+    <script type="text/javascript" src="js/jquery-3.6.0.js"></script>
+
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--Jquery-->
+    <title>.::Login::.</title>
+    <script>
+        $(document).ready(function () {
+            $("#navegacion").load("./compartidos/barranav.html");
+            $("#futer").load("./compartidos/futer.html");
+
+            $("#btn-reset").click(function () {
+                $("#formula").trigger('reset');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header id="navegacion"></header>
+    <div class="container">
+        <h1>Bienvenido</h1>
+        <form action="../back/admin/loguear.php" method="post">
+            <input type="file" name="archivo" id="fotop" />
+
+            <button id="btn-subir" class="btn waves-effect waves-light" type="button" name="action">Subir</button>
+            <button id="btn-ver" class="btn waves-effect waves-light" type="button" name="action">Ver</button>
+        </form>
+        </fieldset>
+    </div>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+        import { getStorage, ref, uploadBytesResumable, getDownloadURL} from "https://www.gstatic.com/firebasejs/9.8.2/firebase-storage.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+    
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+        apiKey: "AIzaSyAhbifQ26AXAHwEfLfWHsy-zUpgUFJ5RU4",
+        authDomain: "cendi-c14d4.firebaseapp.com",
+        projectId: "cendi-c14d4",
+        storageBucket: "cendi-c14d4.appspot.com",
+        messagingSenderId: "698358442422",
+        appId: "1:698358442422:web:3b294082c1704d543d7917",
+        measurementId: "G-8G6YYRHKLQ"
+        };
+        
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const storage = getStorage();
+        var alumno;
+        var url1 = {
+            dir1: "",
+            dir2: "",
+        }
+
+
+        $("#btn-subir").click(function () {
+            const file = $("#fotop").prop('files')[0];
+        const imageRef = ref(storage, 'images/' + file.name);
+        uploadBytesResumable(imageRef, file)
+          .then((snapshot) => {
+            console.log('Uploaded', snapshot.totalBytes, 'bytes.');
+            console.log('File metadata:', snapshot.metadata);
+            // Let's get a download URL for the file.
+            getDownloadURL(snapshot.ref).then((url) => {
+              console.log('File available at', url);
+                url1.dir1 = url;
+              // ...
+            });
+          }).catch((error) => {
+            console.error('Upload failed', error);
+            // ...
+          });
+    
+        });
+
+        $("#btn-ver").click(function () {
+            alert(url1.dir1);
+        });
+
+    </script>
+
+
+
+</body>
+<footer id="futer"></footer>
+
+</html>

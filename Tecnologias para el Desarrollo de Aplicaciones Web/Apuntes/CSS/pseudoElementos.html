@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="Patricia Escamilla" />
+<title>.:: Ejemplo de Pseudo-Elementos =100322= ::.</title>
+<style>
+
+p::first-line {
+  color:#5ECEAF;
+  font-variant:small-caps;
+}
+
+p::first-letter {
+  color:#063;
+  font-size: xx-large;
+}
+
+h1::before{content:url(imgs/burrito.fw.png);}
+p::after{content:url(imgs/burrito.fw.png);}
+
+.centrado{
+  text-align: center;
+}
+
+/* Este código es utilizado para los selectores de atributo */
+/*
+a[target="_top"]{
+  background: pink;
+}
+
+a[target="_blank"]{
+  background:navy;
+}
+*/
+
+</style>
+</head>
+
+<body>
+<h1>Pseudo-Elementos</h1>
+<p>Un pseudo-elemento es usado para diseñar partes especificas de un elemento.</p>
+<p class="centrado"><img src="imgs/pseudoElem.fw.png" width="300" height="130" title="Sintaxis de Pseudo-Elemento" /></p>
+
+<p>El pseudo-elemento ::first-line se usa para agregar un efecto especial a la primer l&iacute;nea de un texto y solo puede ser aplicado a los elementos a nivel de bloque.</p>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+<!-- Código para ver el funcionamiento de los selectores de atributo -->
+
+<!--
+<a href="https://www.google.com" target="_top">Google</a>
+<a href="http://www.disney.com" target="_blank">disney.com</a>
+-->
+</body>
+
+</html>

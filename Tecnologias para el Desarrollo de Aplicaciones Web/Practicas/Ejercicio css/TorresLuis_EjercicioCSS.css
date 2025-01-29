@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+.estilo1{
+    color: darkcyan;
+    font-size: 20px;
+    text-decoration: underline;
+}
+.estilo2{
+    font-size: 18px;
+    color: darkgreen;
+    text-align: center;
+}

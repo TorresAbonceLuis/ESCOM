@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/custom.css" />
+
+    <!--Let browser know website is optimized for mobile-->
+
+    <!--Jquery-->
+    <script type="text/javascript" src="js/jquery-3.6.0.js"></script>
+
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--Jquery-->
+    <title>.::Login::.</title>
+    <script>
+        $(document).ready(function () {
+            $("#navegacion").load("./compartidos/barranav.html");
+            $("#futer").load("./compartidos/futer.html");
+
+            $("#btn-reset").click(function () {
+                $("#formula").trigger('reset');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header id="navegacion"></header>
+    <div class="container">
+        <div class="mt-5">
+        <form action="../back/admin/loguear.php" method="post">
+            <fieldset class="form-group border p-3">
+                <legend class="w-auto px-2"><h2>Inicio de Sesion</h2></legend>
+                <div class="mb-3">
+                    <input type="text" name="usuario" placeholder="Usuario" class="form-control username" />
+                </div>
+                <div class="mb-3">
+                    <input type="password" name="contraseña" placeholder="Contraseña" class="form-control username" />
+                </div>
+                <button id="recuperar" class="btn btn-primary" type="submit" name="action"> Acceder    
+                </button>
+        </form>
+        </fieldset>
+    </div>
+    </div>
+</body>
+<footer id="futer"></footer>
+
+</html>

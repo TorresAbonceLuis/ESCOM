@@ -17,4 +17,4 @@ Profesores:
 - Inteligencia Artificial: Romero Herrera Rodolfo
 - Machine Learning: Camacho Vazquez Vanessa Alejandra
 - Desarrollo de aplicaciones moviles nativas: Aljeandro Sigfrido Cifuentes Alvarez
-- Administracion 
+- Administracion de servicios en red: 

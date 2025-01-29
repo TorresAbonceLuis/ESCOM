@@ -1,5 +1,0 @@
-Escribir un programa con el nombre capturador que tenga un capturador por cada una de la señales que se muestran en la siguiente tabla:
-
-
-
-El programa, después de crear los capturadores, debe entrar en un ciclo de espera de señales. Cuando reciba alguna de las señales anteriores, debe emitir un mensaje como muestra la siguiente tabla:

@@ -1,0 +1,2 @@
+set pcname Profesor2
+ip 192.168.10.2 192.168.10.254 24

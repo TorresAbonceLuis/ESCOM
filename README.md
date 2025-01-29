@@ -12,7 +12,6 @@ Profesores:
 - Sistemas Operativos: Mondragon Tanibet Perez de los santos
 - Tecnologias para el Desarrollo de Aplicaciones Web: Patricia Escamilla Miranda
 - Redes de Computadoras: Juan Jesus Alcaraz Torres.
-- Analisis y diseño de sistemas: Ruben Peredo Valderrama --
 - Aplicaciones para comunicaciones en red: Mondragon Tanibet Perez de los santos
 - Inteligencia Artificial: Romero Herrera Rodolfo
 - Machine Learning: Camacho Vazquez Vanessa Alejandra

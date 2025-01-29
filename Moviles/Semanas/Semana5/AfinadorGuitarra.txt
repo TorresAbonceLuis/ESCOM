@@ -1,0 +1,166 @@
+https://www.adictosaltrabajo.com/2020/06/12/introduccion-a-reproducir-musica-en-android-con-mediaplayer/
+*****	AFINADOR DE GUITARRA	*****
+*****	MainActivity.java	*****
+import android.app.Activity;
+import android.os.Bundle;
+import android.media.MediaPlayer;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.*;
+public class MainActivity extends Activity implements OnClickListener {
+    static final String msg = "Reproduciendo ";
+    MediaPlayer mp;
+    Button jbnE1, jbnA1, jbnD1, jbnG1, jbnB1, jbnE2, jbns1;
+    TextView jtv;
+    @Override
+    protected void onCreate(Bundle b) {
+        super.onCreate(b);
+        setContentView(R.layout.activity_main);
+        jbnE1 = (Button) findViewById(R.id.E1); jbnE1.setOnClickListener(this);
+        jbnA1 = (Button) findViewById(R.id.A1); jbnA1.setOnClickListener(this);
+        jbnD1 = (Button) findViewById(R.id.D1); jbnD1.setOnClickListener(this);
+        jbnG1 = (Button) findViewById(R.id.G1); jbnG1.setOnClickListener(this);
+        jbnB1 = (Button) findViewById(R.id.B1); jbnB1.setOnClickListener(this);
+        jbnE2 = (Button) findViewById(R.id.E2); jbnE2.setOnClickListener(this);
+        jbns1 = (Button) findViewById(R.id.xbns1); jbns1.setOnClickListener(this);
+    }
+    public void onClick(View v) {
+        if (v.getId() == jbnE1.getId()) {
+            mp = MediaPlayer.create(this, R.raw.cuerda_e1);
+            jtv.setText(msg + "Cuerda E");
+        } else if (v.getId() == jbnA1.getId()) {
+            jtv.setText(msg + "Cuerda A");
+            mp = MediaPlayer.create(this, R.raw.cuerda_a1);
+        } else if (v.getId() == jbnD1.getId()){
+            mp = MediaPlayer.create(this, R.raw.cuerda_d1);
+            jtv.setText(msg + "Cuerda D");
+        } else if (v.getId() == jbnG1.getId()) {
+            mp = MediaPlayer.create(this, R.raw.cuerda_g1);
+            jtv.setText(msg + "Cuerda G");
+        } else if (v.getId() == jbnB1.getId()) {
+            mp = MediaPlayer.create(this, R.raw.cuerda_b1);
+            jtv.setText(msg + "Cuerda B");
+        } else if (v.getId() == jbnE2.getId()) {
+            mp = MediaPlayer.create(this, R.raw.cuerda_e2);
+            jtv.setText(msg + "Cuerda E");
+        }
+        jtv = (TextView) findViewById(R.id.xtv);
+    }
+    @Override
+    public void onPause(){
+        try{
+            super.onPause();
+            mp.pause();
+        } catch (Exception e){}
+    }
+    public void onStop(){
+        super.onStop();
+        mp.stop();
+    }
+    private void playSound(int arg){
+        try{
+            if(mp.isPlaying()){
+                mp.stop();
+                mp.release();
+            }
+        }catch (Exception e){
+            Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
+        }
+        mp.setLooping(true);
+        mp.start();
+    }
+}
+
+*****	activity_main.xml	*****
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/scrollView1">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg"
+        android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="top"
+        android:text="@string/hola"
+        android:textColor="@color/textcolor2" />
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@string/imagen"
+        android:scaleType="center"
+        android:src="@drawable/guitarra" />
+    <Button
+        android:id="@+id/E1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/e1" />
+    <Button
+        android:id="@+id/A1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/e1" />
+    <Button
+        android:id="@+id/D1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/e1" />
+    <Button
+        android:id="@+id/G1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/e1" />
+    <Button
+        android:id="@+id/B1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/e1" />
+    <Button
+        android:id="@+id/E2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/e1" />
+    <TextView
+        android:id="@+id/xtv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text=""
+        android:textColor="@color/textcolor"
+        android:textStyle="bold" />
+    <Button
+        android:id="@+id/xbns1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="@string/salir" />
+    </LinearLayout>
+</ScrollView>
+
+*****	strings.xml	*****
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hola">Seleccionar una cadena</string>
+    <string name="app_name">Afinador de guitarra</string>
+    <color name="bg">#ffffff</color>
+    <color name="textcolor">#ff0000</color>
+    <color name="textcolor2">#000000</color>
+    <string name="e1">Cuerda E</string>
+    <string name="a1">Cuerda A</string>
+    <string name="d1">Cuerda D</string>
+    <string name="g1">Cuerda G</string>
+    <string name="b1">Cuerda B</string>
+    <string name="e2">Cuerda E</string>
+    <string name="salir">Salir</string>
+    <string name="imagen">Guitarra</string>
+</resources>
+

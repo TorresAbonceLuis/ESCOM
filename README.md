@@ -18,4 +18,3 @@ Profesores:
 - Machine Learning: Camacho Vazquez Vanessa Alejandra
 - Desarrollo de aplicaciones moviles nativas: Aljeandro Sigfrido Cifuentes Alvarez
 - Administracion de servicios en red: Gaspar Medina Fabián
-- a-

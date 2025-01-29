@@ -1,0 +1,1 @@
+Ejercicio: Implementar un shellscript que valide si el script fue ejecutado con argumentos. Si tiene argumentos que los imprima, si no tiene argumentos que imprima "sin argumentos"

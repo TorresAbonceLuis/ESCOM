@@ -8,4 +8,5 @@ Profesores:
 - Analisis y Diseño de Algoritmos: Joel Omar Juárez Gambino 
 - Bases de Datos: Lorena Chavarria Baez
 - Paradigmas de Programacion: Yaxkin Flores Mendoza
-- Teoria de la Computacion: 
+- Teoria de la Computacion: Genaro Juarez Martinez
+- Sistemas Operativos: Mondragon Tanibet Perez de los santos
